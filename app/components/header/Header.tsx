@@ -54,7 +54,7 @@ export default function Header() {
             </div>
             {isMobileNavOpen && (
                 <div className="md:hidden absolute top-0 right-0 w-64 h-9xl bg-white shadow-lg">
-                    <nav className="flex flex-col items-end gap-5 p-4">
+                    <nav className="flex flex-col items-end gap-5 pt-6 pr-5">
                         <button
                             className="md:hidden ml-10 text-sm rounded-sm"
                             onClick={toggleMobileNav}
