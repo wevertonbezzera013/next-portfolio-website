@@ -1,7 +1,6 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import '@fontsource/krona-one';
 
 export const metadata = {
   title: 'Wev_Dev',
@@ -15,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="font-krona">{children}</body>
     </html>
   )
 }

@@ -15,8 +15,8 @@ export const HeaderItem = ({label, href}: NavItemProps) => {
 
     return (
         <Link href={href} className={cn(
-            "flex items-center hover:bg-secondary ease-in-out duration-300 p-2 rounded-sm text-grey gap-2",
-            isActive && "text-white"
+            "flex items-center hover:border-b-4 hover:border-secondary ease-in-out p-2 rounded-sm text-text gap-2",
+            isActive && "text-white border-b-4 border-secondary hover:border-text text-text"
         )}>
             {label}
         </Link>
