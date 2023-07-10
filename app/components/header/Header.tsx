@@ -28,8 +28,8 @@ export default function Header() {
     };
 
     return (
-        <header className="bg-white absolute top-0 w-full z-10 h-24 flex items-center justify-center">
-            <div className="container pl-5 pr-5 flex items-center justify-between">
+        <header className="font-krona bg-white top-0 w-full z-10 h-24 flex items-center justify-center">
+            <div className="w-[90%] pl-5 pr-5 flex items-center justify-between">
                 <Link href="/">
                     <div className="text-text text-base md:text-2xl">
                         {logo}

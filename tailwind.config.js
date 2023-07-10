@@ -7,7 +7,8 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            krona: ['Krona One', 'sans-serif']
+            krona: ['Krona One', 'sans-serif'],
+            inter: ['Inter', 'sans-serif']
         },
         extend: {
             spacing: {
@@ -21,6 +22,7 @@ module.exports = {
         colors: {
             primary: '#0F5EDF',
             secondary: '#B1CFFF',
+            newBlue: '#3381FF',
             text: '#001538',
             white: '#ffff',
             grey: '#8091A6'
