@@ -64,12 +64,12 @@ export default function HeroSection() {
                         </li>
                         <li className="flex items-center">
                             <Icon name="FaSistrix" className="text-primary text-5xl md:text-4xl pr-2" />
-                            Skilled Specialist
+                            Skilled Developer
                         </li>
                     </ul>
 
                     <div className="mt-12 md:mt-24 text-sm md:text-xl flex justify-between">
-                        <p className="pr-2 text-lg md:pr-28">I am a highly skilled and versatile Full Stack Developer with a strong background in both frontend and backend technologies.</p>
+                        <p className="pr-2 text-lg md:pr-28">As a passionate learner and a dedicated Full Stack Developer, I am committed to delivering exceptional results.</p>
                         <p className="font-inter">My expertise lies in creating innovative and user-friendly applications that enhance the digital experience. I have a keen eye for detail and a passion for delivering high-quality solutions that exceed client expectations. By combining my technical proficiency with a creative mindset, I ensure that the applications I develop are visually appealing, intuitive, and responsive across various platforms.</p>
                     </div>
                 </div>
