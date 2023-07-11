@@ -49,13 +49,24 @@ export default function HeroSection() {
 
             <section className=" font-krona container w-full h-[555px]">
                 <div>
-                    <ul className="flex justify-between text-xl md:text-2xl">
-                        <li className="flex items-center"><Icon name="HiOutlineCursorClick" className="text-primary text-3xl md:text-4xl" />Front End</li>
-                        <li className="flex items-center"><Icon name="HiOutlineGlobe" className="text-primary text-2xl md:text-3xl" />Back End</li>
-                        <li className="hidden md:flex md:items-center"><Icon name="HiOutlineBriefcase" className="text-primary text-3xl" />Full Stack</li>
+                    <ul className="grid grid-cols-2 gap-2 text-base md:text-2xl break-words">
+                        <li className="flex items-center">
+                            <Icon name="HiOutlineCursorClick" className="text-primary text-3xl md:text-4xl pr-2" />
+                            +4 Years
+                        </li>
+                        <li className="flex items-center">
+                            <Icon name="HiOutlineGlobe" className="text-primary text-3xl md:text-4xl pr-2" />
+                            +20 Clients
+                        </li>
+                        <li className="flex items-center">
+                            <Icon name="HiOutlineBriefcase" className="text-primary text-5xl md:text-4xl pr-2" />
+                            Experienced Freelancer
+                        </li>
+                        <li className="flex items-center">
+                            <Icon name="FaSistrix" className="text-primary text-5xl md:text-4xl pr-2" />
+                            Skilled Specialist
+                        </li>
                     </ul>
-
-                    <div className="flex justify-center text-xl"><div className="flex md:hidden items-center"><Icon name="HiOutlineBriefcase" className="text-primary text-2xl md:text-3xl" />Full Stack</div></div>
 
                     <div className="mt-12 md:mt-24 text-sm md:text-xl flex justify-between">
                         <p className="pr-2 text-lg md:pr-28">I am a highly skilled and versatile Full Stack Developer with a strong background in both frontend and backend technologies.</p>
