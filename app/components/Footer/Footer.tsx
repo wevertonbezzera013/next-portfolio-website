@@ -22,7 +22,7 @@ export default function Footer() {
     const logo = "<WEV_DEV/>";
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="bg-newBlue text-white top-0 w-full z-10 p-5 flex flex-col items-center justify-center">
+        <footer className="font-inter bg-newBlue text-white top-0 w-full z-10 p-5 flex flex-col items-center justify-center">
             <div className="w-90% pl-1 pr-1 pb-5 md:pl-5 md:pr-5 flex items-start justify-between">
                 <div className="flex flex-col md:flex-row items-center gap-10 text-base">
                     {FOOTER_NAV_ITEMS.map(item => (
