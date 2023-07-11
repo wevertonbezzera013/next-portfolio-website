@@ -1,6 +1,7 @@
 import * as FaIcons from 'react-icons/fa'
 import type { IconBaseProps } from 'react-icons/lib'
 import * as MdIcons from 'react-icons/md'
+import * as IconName from "react-icons/hi";
 
 export interface IconProps extends IconBaseProps {
   name: string
@@ -23,6 +24,13 @@ export const Icon = ({ name, ...rest }: IconProps) => {
   if (lib === 'md') {
     // @ts-ignore
     const ElementIcon = MdIcons[name]
+
+    return <ElementIcon {...rest} />
+  }
+
+  if (lib === 'hi') {
+    // @ts-ignore
+    const ElementIcon = IconName[name]
 
     return <ElementIcon {...rest} />
   }

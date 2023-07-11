@@ -43,6 +43,24 @@ export default function HeroSection() {
                         </a>
                     </div>
                 </div>
+
+            </div>
+
+            <div className="mt-24 md:mt-52">
+
+                <ul className="flex justify-between text-xl md:text-2xl">
+                    <li className="flex items-center"><Icon name="HiOutlineCursorClick" className="text-primary text-3xl md:text-4xl" />Front End</li>
+                    <li className="flex items-center"><Icon name="HiOutlineGlobe" className="text-primary text-2xl md:text-3xl" />Back End</li>
+                    <li className="hidden md:flex md:items-center"><Icon name="HiOutlineBriefcase" className="text-primary text-3xl" />Full Stack</li>
+                </ul>
+
+                <div className="flex justify-center text-xl"><div className="flex md:hidden items-center"><Icon name="HiOutlineBriefcase" className="text-primary text-2xl md:text-3xl" />Full Stack</div></div>
+
+                <div className="mt-12 md:mt-24 text-sm md:text-xl flex justify-between">
+                    <p className="pr-2 text-lg md:pr-28">I am a highly skilled and versatile Full Stack Developer with a strong background in both frontend and backend technologies.</p>
+                    <p className="font-inter">My expertise lies in creating innovative and user-friendly applications that enhance the digital experience. I have a keen eye for detail and a passion for delivering high-quality solutions that exceed client expectations. By combining my technical proficiency with a creative mindset, I ensure that the applications I develop are visually appealing, intuitive, and responsive across various platforms.</p>
+                </div>
+
             </div>
         </section>
     )
