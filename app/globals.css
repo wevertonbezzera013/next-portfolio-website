@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .container {
-    @apply mx-auto w-full max-w-[1200px] px-6
-  }
+    @apply mx-auto w-full max-w-[1200px] px-6;
+}
