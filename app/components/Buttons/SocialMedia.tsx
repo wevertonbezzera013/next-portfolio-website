@@ -3,7 +3,7 @@ import { Icon } from "../icons/icons";
 export default function SocialMedia() {
     return (
         <div className="flex justify-between">
-            <a className="pr-6" href="https://github.com/wevertonbezzera013">
+            <a className="pr-6 " href="https://github.com/wevertonbezzera013">
                 <Icon
                     name="FaGithub"
                     className="text-white bg-newBlue hover:bg-secondary ease-in-out duration-300 rounded-full w-12 h-12 p-2"

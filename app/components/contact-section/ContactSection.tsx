@@ -48,7 +48,7 @@ export const ContactSection = () => {
                         alt="Profile Illustration"
                         width={650}
                         height={610}
-                        className="block md:hidden"
+                        className="block md:hidden z-0"
                     />
                     <form
                         className="mt-12 w-full flex flex-col gap-4 font-inter text-text"
@@ -89,8 +89,10 @@ export const ContactSection = () => {
                             Send Message
                         </button>
                     </form>
-                    <div className="mt-6">
-                        <SocialMedia />
+                    <div className="absolute">
+                        <div className="mt-6">
+                            <SocialMedia />
+                        </div>
                     </div>
                 </div>
             </div>
