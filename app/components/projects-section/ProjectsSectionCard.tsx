@@ -52,10 +52,10 @@ export const ProjectsSectionCard = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-4 md:gap-3">
-                    <Badges label="javascript" />
-                    <Badges label="javascript" />
-                    <Badges label="javascript" />
-                    <Badges label="javascript" />
+                    <Badges label="javascript" className="text-sm" />
+                    <Badges label="javascript" className="text-sm" />
+                    <Badges label="javascript" className="text-sm" />
+                    <Badges label="javascript" className="text-sm" />
                 </div>
 
                 <ProjectsSectionLink href="/projects/book-wise" />

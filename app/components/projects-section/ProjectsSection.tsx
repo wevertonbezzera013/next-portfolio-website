@@ -18,7 +18,7 @@ export const ProjectsSection = () => {
 
     return (
         <section className="container py-11">
-            <SectionTitle title="Projects" />
+            <SectionTitle title="Projects" className="text-text" />
             <div className="flex flex-col gap-11 my-11">
                 {/* Render the visible projects */}
                 {Array.from({ length: visible }).map((_, index) => (
