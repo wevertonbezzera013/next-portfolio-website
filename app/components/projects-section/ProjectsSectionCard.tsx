@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Icon } from "../icons/icons";
 import { ProjectsSectionCardItem } from "./ProjectsSectionCardItem";
 import { Badges } from "../Badges/Badges";
+import { ProjectsSectionLink } from "./ProjectsSectionLink";
 
 const PROJECT_SECTION_CARD_ITEMS = [
     {
@@ -22,7 +23,7 @@ const PROJECT_SECTION_CARD_ITEMS = [
 export const ProjectsSectionCard = () => {
     return (
         <div className="flex flex-col md:flex-row">
-            <div className="w-full h-full">
+            <div className="w-full h-full mr-3">
                 <Image
                     width={420}
                     height={304}
@@ -56,6 +57,8 @@ export const ProjectsSectionCard = () => {
                     <Badges label="javascript" />
                     <Badges label="javascript" />
                 </div>
+
+                <ProjectsSectionLink href="/projects/book-wise" />
             </div>
         </div>
     );
