@@ -136,7 +136,7 @@ export default function HeroSection() {
                         </li>
                     </ul>
 
-                    <div className="mt-12 md:mt-24 text-sm md:text-xl flex justify-between">
+                    <div className="mt-8 md:mt-24 text-lg md:text-xl flex flex-col md:flex-row justify-between">
                         <p className="pr-2 text-lg md:pr-28">
                             As a passionate learner and a dedicated Full Stack
                             Developer, I am committed to delivering exceptional

@@ -3,7 +3,7 @@ import SkillsCard from "./SkillsCard";
 
 export const Skills = () => {
     return (
-        <section className="container mt-44 md:my-10">
+        <section className="container mt-52 md:my-10">
             <SectionTitle title="Technologies" />
             <SkillsCard />
         </section>
