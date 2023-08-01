@@ -28,6 +28,11 @@ module.exports = {
             grey: "#8091A6",
             button: "#2D68CA",
             badges: "#5593F6",
+            contact: "#0061FF14",
+            form: "#93BCFF80",
+        },
+        boxShadow: {
+            button: "0px 0px 5px 1px #B1CFFF",
         },
     },
     plugins: [],

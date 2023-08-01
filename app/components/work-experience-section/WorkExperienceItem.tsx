@@ -11,14 +11,19 @@ export const WorkExperienceItem = () => {
                         2022
                     </span>
                 </div>
-                <div className="rounded-full border border-newBlue p-0.5">
-                    <Image
-                        src="/images/boost-icon.png"
-                        alt="company logo"
-                        width={50}
-                        height={50}
-                        className="rounded-full"
-                    />
+                <div className="rounded-full border border-newBlue p-0.5 hover:p-1 duration-300 ease-in-out">
+                    <a
+                        href="https://www.linkedin.com/company/boostcommerce/"
+                        target="_blank"
+                    >
+                        <Image
+                            src="/images/boost-icon.png"
+                            alt="company logo"
+                            width={50}
+                            height={50}
+                            className="rounded-full"
+                        />
+                    </a>
                 </div>
                 <div className="h-full w-[2px] bg-newBlue"></div>
             </div>
@@ -28,7 +33,7 @@ export const WorkExperienceItem = () => {
                     <a
                         href="https://www.linkedin.com/company/boostcommerce/"
                         target="_blank"
-                        className="text-white text-lg font-krona"
+                        className="text-white hover:text-grey duration-300 ease-in-out text-lg font-krona"
                     >
                         BoostCommerce
                     </a>
