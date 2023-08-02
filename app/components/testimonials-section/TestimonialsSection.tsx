@@ -13,14 +13,6 @@ import "swiper/css/pagination";
 
 const TESTIMONIAL_SECTION_CARD_ITEMS = [
     {
-        label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-        image: "/images/dona-profile-pic.jpg",
-        title: "Daniela Sherif",
-        subtitle:
-            "Application Associate | Senior Customer Success Executive | QA Tester: In progress | Learning enthusiast",
-        link: "http://www.youtube.com/",
-    },
-    {
         label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
         image: "/images/dona-profile-pic.jpg",
         title: "Daniela Sherif",
