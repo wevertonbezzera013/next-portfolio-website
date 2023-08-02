@@ -19,14 +19,15 @@ const PROJECT_SECTION_CARD_ITEMS = [
 
 export const ProjectsSectionCardGrid = () => {
     return (
-        <div className="px-6 pb-6 flex flex-col md:px-10">
+        <div className="px-6 pb-6 flex flex-col md:px-10 group">
             <div className="w-full h-full">
                 <Image
                     width={420}
                     height={304}
                     src="/images/photo-1481349518771-20055b2a7b24.jpg"
                     alt="Project Thumbnail"
-                    className="cover drop-shadow-xl"
+                    className="cover drop-shadow-xl transition-all duration-300 group-hover:scale-110"
+                    unoptimized
                 />
             </div>
 
@@ -39,7 +40,7 @@ export const ProjectsSectionCardGrid = () => {
                     Nunc vulputate libero et velit interdum, ac aliquet odio
                     mattis.
                 </p>
-                <div className="flex flex-col md:flex-row gap-4 md:gap-9">
+                <div className="flex flex-wrap gap-4 md:gap-9">
                     {PROJECT_SECTION_CARD_ITEMS.map((item) => (
                         <ProjectsSectionCardGridItem
                             icon={item.icon}
@@ -51,27 +52,24 @@ export const ProjectsSectionCardGrid = () => {
                 </div>
 
                 <div>
-                    <div className="grid grid-cols-1 md:flex md:flex-wrap gap-2 md:gap-3">
-                        <div className="grid grid-cols-2 md:flex md:flex-wrap gap-8 md:gap-3">
-                            <Badges
-                                label="javascript"
-                                className="text-xs md:text-sm"
-                            />
-                            <Badges
-                                label="javascript"
-                                className="text-xs md:text-sm"
-                            />
-                        </div>
-                        <div className="grid grid-cols-2 md:flex md:flex-wrap gap-8 md:gap-3">
-                            <Badges
-                                label="javascript"
-                                className="text-xs md:text-sm"
-                            />
-                            <Badges
-                                label="javascript"
-                                className="text-xs md:text-sm"
-                            />
-                        </div>
+                    <div className="flex flex-wrap gap-2 md:gap-3">
+                        <Badges
+                            label="javascript"
+                            className="text-xs md:text-sm"
+                        />
+                        <Badges
+                            label="javascript"
+                            className="text-xs md:text-sm"
+                        />
+
+                        <Badges
+                            label="javascript"
+                            className="text-xs md:text-sm"
+                        />
+                        <Badges
+                            label="javascript"
+                            className="text-xs md:text-sm"
+                        />
                     </div>
                 </div>
 

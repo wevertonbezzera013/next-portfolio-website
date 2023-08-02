@@ -20,14 +20,14 @@ const PROJECT_SECTION_CARD_ITEMS = [
 
 export const ProjectsSectionCard = () => {
     return (
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row group">
             <div className="w-full h-full mr-3">
                 <Image
                     width={420}
                     height={304}
                     src="/images/photo-1481349518771-20055b2a7b24.jpg"
                     alt="Project Thumbnail"
-                    className="cover drop-shadow-xl"
+                    className="cover drop-shadow-xl transition-all duration-300 group-hover:scale-110"
                 />
             </div>
 

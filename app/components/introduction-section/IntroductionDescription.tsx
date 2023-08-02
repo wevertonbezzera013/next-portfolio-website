@@ -10,7 +10,7 @@ export const IntroductionDescription = ({
     className,
 }: IntroductionDescriptionProps) => {
     return (
-        <div className={cn("flex flex-col gap-6", className)}>
+        <div className={cn("flex flex-col", className)}>
             <p className="font-inter text-introduction text-base">
                 {description}
             </p>

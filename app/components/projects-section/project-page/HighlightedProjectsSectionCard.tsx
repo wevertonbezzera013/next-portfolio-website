@@ -19,14 +19,15 @@ const PROJECT_SECTION_CARD_ITEMS = [
 
 export const HighlightedProjectsSectionCard = () => {
     return (
-        <div className="flex flex-col md:flex-row container pt-20 pb-3 md:py-20">
+        <div className="flex flex-col md:flex-row container pt-20 pb-3 md:py-20 group">
             <div className="w-full h-full mr-8">
                 <Image
                     width={700}
                     height={470}
                     src="/images/photo-1481349518771-20055b2a7b24.jpg"
                     alt="Project Thumbnail"
-                    className="cover drop-shadow-xl"
+                    className="cover drop-shadow-xl transition-all duration-300 group-hover:scale-110"
+                    unoptimized
                 />
             </div>
 
@@ -37,7 +38,7 @@ export const HighlightedProjectsSectionCard = () => {
                     Nunc vulputate libero et velit interdum, ac aliquet odio
                     mattis.
                 </p>
-                <div className="flex gap-4 md:gap-9">
+                <div className="flex flex-wrap gap-4 md:gap-9">
                     {PROJECT_SECTION_CARD_ITEMS.map((item) => (
                         <ProjectsSectionCardItem
                             icon={item.icon}
