@@ -85,10 +85,10 @@ export const ContactSection = () => {
                                     maxLength={500}
                                     {...register("message")}
                                 />
+                                <button className="mt-6 bg-button hover:bg-newBlue ease-in-out duration-300 font-krona px-full py-2 px-24 text-white">
+                                    Send Message
+                                </button>
                             </div>
-                            <button className="mt-6 bg-button hover:bg-newBlue ease-in-out duration-300 font-krona px-full py-2 text-white">
-                                Send Message
-                            </button>
                         </form>
                         <div className="absolute contents">
                             <div className="mt-6">
