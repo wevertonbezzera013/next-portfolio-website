@@ -32,6 +32,7 @@ module.exports = {
             form: "#93BCFF80",
             testimonial: "#497CD0",
             "testimonial-text": "#9FC4FF",
+            introduction: "#E2EDFF",
         },
         boxShadow: {
             button: "0px 0px 5px 1px #B1CFFF",
