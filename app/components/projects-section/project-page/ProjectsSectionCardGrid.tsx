@@ -1,9 +1,8 @@
 import Image from "next/image";
 
-import "./../../../public/images/photo-1481349518771-20055b2a7b24.jpg";
-import { ProjectsSectionCardItem } from "./ProjectsSectionCardItem";
-import { Badges } from "../Badges/Badges";
-import { ProjectsSectionLink } from "./ProjectsSectionLink";
+import { ProjectsSectionCardItem } from "../ProjectsSectionCardItem";
+import { Badges } from "../../Badges/Badges";
+import { ProjectsSectionLink } from "../ProjectsSectionLink";
 
 const PROJECT_SECTION_CARD_ITEMS = [
     {
@@ -18,10 +17,10 @@ const PROJECT_SECTION_CARD_ITEMS = [
     },
 ];
 
-export const ProjectsSectionCard = () => {
+export const ProjectsSectionCardGrid = () => {
     return (
-        <div className="flex flex-col md:flex-row">
-            <div className="w-full h-full mr-3">
+        <div className="flex flex-col px-10">
+            <div className="w-full h-full">
                 <Image
                     width={420}
                     height={304}
@@ -32,7 +31,9 @@ export const ProjectsSectionCard = () => {
             </div>
 
             <div className="flex flex-col gap-3 mt-6 md:mt-0">
-                <h3 className="font-inter text-primary text-sm">LOREM IPSUM</h3>
+                <h3 className="font-inter text-primary text-sm pt-4">
+                    LOREM IPSUM
+                </h3>
                 <p className="font-krona text-text text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc vulputate libero et velit interdum, ac aliquet odio
