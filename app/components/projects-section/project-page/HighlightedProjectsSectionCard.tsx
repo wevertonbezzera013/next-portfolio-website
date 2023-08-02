@@ -19,7 +19,7 @@ const PROJECT_SECTION_CARD_ITEMS = [
 
 export const HighlightedProjectsSectionCard = () => {
     return (
-        <div className="flex flex-col md:flex-row container py-20">
+        <div className="flex flex-col md:flex-row container pt-20 pb-3 md:py-20">
             <div className="w-full h-full mr-8">
                 <Image
                     width={700}

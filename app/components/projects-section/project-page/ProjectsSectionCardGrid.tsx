@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { ProjectsSectionCardItem } from "../ProjectsSectionCardItem";
 import { Badges } from "../../Badges/Badges";
 import { ProjectsSectionLink } from "../ProjectsSectionLink";
+import { ProjectsSectionCardGridItem } from "./ProjectsSectionCardGridItem";
 
 const PROJECT_SECTION_CARD_ITEMS = [
     {
@@ -19,7 +19,7 @@ const PROJECT_SECTION_CARD_ITEMS = [
 
 export const ProjectsSectionCardGrid = () => {
     return (
-        <div className="flex flex-col px-10">
+        <div className="container flex flex-col px-0 md:px-10">
             <div className="w-full h-full">
                 <Image
                     width={420}
@@ -34,14 +34,14 @@ export const ProjectsSectionCardGrid = () => {
                 <h3 className="font-inter text-primary text-sm pt-4">
                     LOREM IPSUM
                 </h3>
-                <p className="font-krona text-text text-lg">
+                <p className="font-krona text-text text-sm md:text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nunc vulputate libero et velit interdum, ac aliquet odio
                     mattis.
                 </p>
-                <div className="flex gap-4 md:gap-9">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-9">
                     {PROJECT_SECTION_CARD_ITEMS.map((item) => (
-                        <ProjectsSectionCardItem
+                        <ProjectsSectionCardGridItem
                             icon={item.icon}
                             key={item.label}
                             label={item.label}
@@ -50,11 +50,25 @@ export const ProjectsSectionCardGrid = () => {
                     ))}
                 </div>
 
-                <div className="flex flex-wrap gap-4 md:gap-3">
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
+                <div>
+                    <div className="grid grid-cols-2 md:flex md:flex-wrap gap-4 md:gap-3">
+                        <Badges
+                            label="javascript"
+                            className="text-[9px] md:text-sm"
+                        />
+                        <Badges
+                            label="javascript"
+                            className="text-[9px] md:text-sm"
+                        />
+                        <Badges
+                            label="javascript"
+                            className="text-[9px] md:text-sm"
+                        />
+                        <Badges
+                            label="javascript"
+                            className="text-[9px] md:text-sm"
+                        />
+                    </div>
                 </div>
 
                 <ProjectsSectionLink href="/projects/book-wise" />
