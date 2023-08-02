@@ -30,6 +30,8 @@ module.exports = {
             badges: "#5593F6",
             contact: "#0061FF14",
             form: "#93BCFF80",
+            testimonial: "#497CD0",
+            "testimonial-text": "#9FC4FF",
         },
         boxShadow: {
             button: "0px 0px 5px 1px #B1CFFF",

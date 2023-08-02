@@ -63,7 +63,9 @@ export default function HeroSection() {
                     </div>
 
                     <div className="flex">
-                        <HeroSectionProfileImage />
+                        <div className="container">
+                            <HeroSectionProfileImage />
+                        </div>
                         <div className="md:hidden pt-10 flex flex-col justify-between ">
                             <a
                                 className="pl-10"
