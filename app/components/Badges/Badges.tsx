@@ -7,13 +7,15 @@ type BadgesItemProps = {
 
 export const Badges = ({ label, className }: BadgesItemProps) => {
     return (
-        <span
-            className={cn(
-                "text-center text-white bg-badges ease-in-out duration-300 px-3 py-2 font-inter text-base md:text-sm font-bold",
-                className
-            )}
-        >
-            {label}
-        </span>
+        <div className="flex place-self-center text-center bg-badges px-2 py-1 md:px-5 md:py-3">
+            <span
+                className={cn(
+                    "text-white font-inter text-sm md:text-base font-bold",
+                    className
+                )}
+            >
+                {label}
+            </span>
+        </div>
     );
 };

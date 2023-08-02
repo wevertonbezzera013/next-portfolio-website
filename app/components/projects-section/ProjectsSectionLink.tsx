@@ -14,7 +14,7 @@ export const ProjectsSectionLink = ({
     return (
         <Link
             className={cn(
-                "flex items-center gap-2 text-text ease-in-out duration-300 hover:text-secondary",
+                "flex items-center gap-2 text-xs md:text-base text-text ease-in-out duration-300 hover:text-secondary",
                 className
             )}
             {...props}

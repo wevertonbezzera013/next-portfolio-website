@@ -19,7 +19,7 @@ const PROJECT_SECTION_CARD_ITEMS = [
 
 export const ProjectsSectionCardGrid = () => {
     return (
-        <div className="container flex flex-col px-0 md:px-10">
+        <div className="px-6 pb-6 flex flex-col md:px-10">
             <div className="w-full h-full">
                 <Image
                     width={420}
@@ -51,23 +51,27 @@ export const ProjectsSectionCardGrid = () => {
                 </div>
 
                 <div>
-                    <div className="grid grid-cols-2 md:flex md:flex-wrap gap-4 md:gap-3">
-                        <Badges
-                            label="javascript"
-                            className="text-[9px] md:text-sm"
-                        />
-                        <Badges
-                            label="javascript"
-                            className="text-[9px] md:text-sm"
-                        />
-                        <Badges
-                            label="javascript"
-                            className="text-[9px] md:text-sm"
-                        />
-                        <Badges
-                            label="javascript"
-                            className="text-[9px] md:text-sm"
-                        />
+                    <div className="grid grid-cols-1 md:flex md:flex-wrap gap-2 md:gap-3">
+                        <div className="grid grid-cols-2 md:flex md:flex-wrap gap-8 md:gap-3">
+                            <Badges
+                                label="javascript"
+                                className="text-xs md:text-sm"
+                            />
+                            <Badges
+                                label="javascript"
+                                className="text-xs md:text-sm"
+                            />
+                        </div>
+                        <div className="grid grid-cols-2 md:flex md:flex-wrap gap-8 md:gap-3">
+                            <Badges
+                                label="javascript"
+                                className="text-xs md:text-sm"
+                            />
+                            <Badges
+                                label="javascript"
+                                className="text-xs md:text-sm"
+                            />
+                        </div>
                     </div>
                 </div>
 
