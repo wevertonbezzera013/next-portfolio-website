@@ -45,6 +45,7 @@ export default function HeroSectionProfileImage() {
                     height={572}
                     src="/images/profile-pic.png"
                     alt="Tom's profile pic"
+                    unoptimized
                 />
             </div>
         </section>

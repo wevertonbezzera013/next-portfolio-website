@@ -38,6 +38,7 @@ export const ContactSection = () => {
                         width={650}
                         height={610}
                         className="hidden lg:block"
+                        unoptimized
                     />
                     <div className="w-full max-w-[420px] mx-auto">
                         <span className="font-krona text-center items-center text-lg">
@@ -50,6 +51,7 @@ export const ContactSection = () => {
                             width={650}
                             height={610}
                             className="block lg:hidden z-0"
+                            unoptimized
                         />
                         <div className="flex flex-col">
                             <form

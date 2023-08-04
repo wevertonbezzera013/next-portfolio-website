@@ -27,6 +27,7 @@ export const ProjectsSectionCard = () => {
                     height={304}
                     src="/images/photo-1481349518771-20055b2a7b24.jpg"
                     alt="Project Thumbnail"
+                    unoptimized
                     className="cover drop-shadow-xl transition-all duration-300 group-hover:scale-110"
                 />
             </div>
