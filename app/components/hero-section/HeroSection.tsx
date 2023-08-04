@@ -67,25 +67,37 @@ export default function HeroSection() {
                             <HeroSectionProfileImage />
                         </div>
                         <div className="md:hidden pt-10 flex flex-col justify-between">
-                            <a href="https://github.com/wevertonbezzera013">
+                            <a
+                                target="_blank"
+                                href="https://github.com/wevertonbezzera013"
+                            >
                                 <Icon
                                     name="FaGithub"
                                     className="text-white bg-primary rounded-full w-9 h-9 p-2"
                                 />
                             </a>
-                            <a href="wa.me/5521968179138">
+                            <a
+                                target="_blank"
+                                href="https://api.whatsapp.com/send/?phone=5521968179138&text&type=phone_number&app_absent=0"
+                            >
                                 <Icon
                                     name="FaWhatsapp"
                                     className="text-white bg-primary rounded-full w-9 h-9 p-2"
                                 />
                             </a>
-                            <a href="https://www.linkedin.com/in/weverton-bezerra-da-costa-061ab11a4/">
+                            <a
+                                target="_blank"
+                                href="https://www.linkedin.com/in/weverton-bezerra-da-costa-061ab11a4/"
+                            >
                                 <Icon
                                     name="FaLinkedin"
                                     className="text-white bg-primary rounded-full w-9 h-9 p-2"
                                 />
                             </a>
-                            <a href="mailto:wevertonbezzera013@gmail.com">
+                            <a
+                                target="_blank"
+                                href="mailto:wevertonbezzera013@gmail.com"
+                            >
                                 <Icon
                                     name="MdMail"
                                     className="text-white bg-primary rounded-full w-9 h-9 p-2"
