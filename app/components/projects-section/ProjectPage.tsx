@@ -45,12 +45,12 @@ export const ProjectPage = () => {
                         ))}
                     </div>
                 </div>
-                <div className="container flex gap-10 space-y-8">
-                    <div className="">
+                <div className="container flex flex-col md:flex-row gap-10 space-y-8">
+                    <div>
                         <SectionTitle title="Project Description" />
                         {PROJECT_PAGE_IMAGES.map((item) => (
                             <p
-                                className="font-krona text-text text-lg pt-10"
+                                className="font-krona text-text text-base md:text-lg pt-10"
                                 key={item.alt}
                             >
                                 {item.description}
@@ -58,7 +58,7 @@ export const ProjectPage = () => {
                         ))}
                     </div>
 
-                    <div className="w-9xl h-96 aspect-w-1 aspect-h-1">
+                    <div className="w-full h-hull md:w-9xl md:h-96 aspect-w-1 aspect-h-1">
                         {PROJECT_PAGE_IMAGES.map((item) => (
                             <Image
                                 src={item.img}
