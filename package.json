@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/krona-one": "^5.0.4",
+    "@graphcms/rich-text-react-renderer": "^0.6.1",
     "@hookform/resolvers": "^3.1.1",
     "@types/node": "20.3.1",
     "@types/react": "18.2.14",

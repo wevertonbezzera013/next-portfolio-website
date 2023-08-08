@@ -1,27 +1,22 @@
 "use client";
 import { cn, getRelativeTimeString } from "@/app/lib/utils";
 import { Icon } from "../icons/icons";
+import { Skills as ISkills } from "@/app/types/projects";
 
 type SkillsCardItemProps = {
-    label: string;
-    icon: string;
-    startDate: string;
+    tech: ISkills;
 };
 
-export const SkillsCardItem = ({
-    label,
-    icon,
-    startDate,
-}: SkillsCardItemProps) => {
+export const SkillsCardItem = ({ tech }: SkillsCardItemProps) => {
     const relativeTime = getRelativeTimeString(
-        new Date(startDate),
-        "en-US"
+        new Date(tech.startDate),
+        "us-EN"
     ).replace("ago", "of experience");
     return (
         <div className="flex flex-col items-center font-krona text-white bg-newBlue p-6 rounded-lg hover:bg-primary ease-in-out duration-300">
             <div className={cn("flex items-center text-lg")}>
-                <Icon name={icon} className="mr-2" />
-                <span>{label}</span>
+                <Icon name={tech.iconSvg} className="mr-2" />
+                <span>{tech.name}</span>
             </div>
             <span className="text-sm">{relativeTime}</span>
         </div>

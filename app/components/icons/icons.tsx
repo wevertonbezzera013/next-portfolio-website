@@ -11,6 +11,9 @@ export interface IconProps extends IconBaseProps {
 
 // Todo: Add more icon types as needed
 export const Icon = ({ name, ...rest }: IconProps) => {
+    if (!name) {
+        return null;
+    }
     const lib = name
         .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
         .split(" ")[0]

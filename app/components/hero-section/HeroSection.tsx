@@ -1,7 +1,14 @@
+import { HomePageInfo } from "@/app/types/page-info";
 import { Icon } from "../icons/icons";
+import { HeroSectionItems } from "./HeroSectionItems";
 import HeroSectionProfileImage from "./HeroSectionProfileImage";
+import { RichText } from "../rich-text";
 
-export default function HeroSection() {
+type HeroSectionProps = {
+    homeInfo: HomePageInfo;
+};
+
+export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
     return (
         <section className="text-text">
             <div className="container font-krona mt-2 md:mt-36 w-full h-[755px] flex flex-col">
@@ -14,17 +21,11 @@ export default function HeroSection() {
                             Weverton B. Costa
                         </h1>
                         <p className="text-newBlue pb-2 md:pb-5 text-lg md:text-2xl">
-                            Full Stack Developer
+                            {homeInfo.introductionTitle}
                         </p>
-                        <p className="text-base md:text-lg">
-                            I am a highly skilled and versatile{" "}
-                            <b className="text-primary">Full Stack Developer</b>{" "}
-                            with a strong background in both frontend and
-                            backend technologies. With a passion for creating
-                            innovative and user-friendly applications, I strive
-                            to deliver high-quality solutions that exceed client
-                            expectations.
-                        </p>
+                        <div className="text-base md:text-lg">
+                            <RichText content={homeInfo.introduction.raw} />
+                        </div>
                         <div className="hidden md:flex pt-10">
                             <a
                                 className="pr-3"
@@ -110,57 +111,35 @@ export default function HeroSection() {
 
             <div className="font-krona container w-full h-[400px]">
                 <div>
-                    <ul className="grid grid-cols-2 gap-2 text-base md:text-2xl break-words">
-                        <li className="flex items-center">
-                            <Icon
-                                name="HiOutlineCursorClick"
-                                className="text-primary text-3xl md:text-4xl pr-2"
-                            />
-                            +4 Years
-                        </li>
-                        <li className="flex items-center">
-                            <Icon
-                                name="HiOutlineGlobe"
-                                className="text-primary text-3xl md:text-4xl pr-2"
-                            />
-                            +20 Clients
-                        </li>
-                        <li className="flex items-center">
-                            <Icon
-                                name="HiOutlineBriefcase"
-                                className="text-primary text-5xl md:text-4xl pr-2"
-                            />
-                            Experienced Freelancer
-                        </li>
-                        <li className="flex items-center">
-                            <Icon
-                                name="FaSistrix"
-                                className="text-primary text-5xl md:text-4xl pr-2"
-                            />
-                            Skilled Developer
-                        </li>
-                    </ul>
+                    <div className="grid grid-cols-2 gap-2 text-base md:text-2xl break-words">
+                        <HeroSectionItems
+                            label={"+4 Years"}
+                            icon={"HiOutlineCursorClick"}
+                        />
+                        <HeroSectionItems
+                            label={"+20 Clients"}
+                            icon={"HiOutlineGlobe"}
+                        />
+                        <HeroSectionItems
+                            label={"Experienced Freelancer"}
+                            icon={"HiOutlineBriefcase"}
+                        />
+                        <HeroSectionItems
+                            label={"Skilled Developer"}
+                            icon={"FaSistrix"}
+                        />
+                    </div>
 
                     <div className="mt-8 md:mt-24 text-lg md:text-xl flex flex-col md:flex-row justify-between">
                         <p className="pr-2 text-lg md:pr-28">
-                            As a passionate learner and a dedicated Full Stack
-                            Developer, I am committed to delivering exceptional
-                            results.
+                            {homeInfo.descriptionTitle}
                         </p>
                         <p className="font-inter">
-                            My expertise lies in creating innovative and
-                            user-friendly applications that enhance the digital
-                            experience. I have a keen eye for detail and a
-                            passion for delivering high-quality solutions that
-                            exceed client expectations. By combining my
-                            technical proficiency with a creative mindset, I
-                            ensure that the applications I develop are visually
-                            appealing, intuitive, and responsive across various
-                            platforms.
+                            <RichText content={homeInfo.descriptionText.raw} />
                         </p>
                     </div>
                 </div>
             </div>
         </section>
     );
-}
+};
