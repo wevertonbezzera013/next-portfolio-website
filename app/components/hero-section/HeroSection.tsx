@@ -10,19 +10,19 @@ type HeroSectionProps = {
 
 export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
     return (
-        <section className="text-text">
+        <div className="text-text">
             <div className="container font-krona mt-2 md:mt-36 w-full h-[755px] flex flex-col">
                 <div className="flex flex-col md:flex-row">
                     <div className="w-full lg:max-w-[530px]">
-                        <p className="text-sm md:text-lg text-secondary">
+                        <div className="text-sm md:text-lg text-secondary">
                             Hi there! My name is
-                        </p>
+                        </div>
                         <h1 className="pt-2 pb-2 md:pt-5 md:pb-5 text-2xl md:text-5xl text-primary">
                             Weverton B. Costa
                         </h1>
-                        <p className="text-newBlue pb-2 md:pb-5 text-lg md:text-2xl">
+                        <div className="text-newBlue pb-2 md:pb-5 text-lg md:text-2xl">
                             {homeInfo.introductionTitle}
-                        </p>
+                        </div>
                         <div className="text-base md:text-lg">
                             <RichText content={homeInfo.introduction.raw} />
                         </div>
@@ -131,15 +131,15 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                     </div>
 
                     <div className="mt-8 md:mt-24 text-lg md:text-xl flex flex-col md:flex-row justify-between">
-                        <p className="pr-2 text-lg md:pr-28">
+                        <div className="pr-2 text-lg md:pr-28">
                             {homeInfo.descriptionTitle}
-                        </p>
-                        <p className="font-inter">
+                        </div>
+                        <div className="font-inter">
                             <RichText content={homeInfo.descriptionText.raw} />
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };

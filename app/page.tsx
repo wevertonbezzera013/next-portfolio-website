@@ -17,10 +17,6 @@ const getPageData = async (): Promise<HomePageData> => {
             raw
           }
           descriptionTitle
-          heroSectionItems {
-            name
-            icon
-          }
           introduction {
             raw
           }
@@ -28,14 +24,13 @@ const getPageData = async (): Promise<HomePageData> => {
           profilePicture {
             url
           }
-          skills {
+          technologies {
+            iconSvg
             name
-            icon
             startDate
           }
         }
       }
-
       `;
 
     return fetchHygraphQuery(query);
@@ -47,7 +42,7 @@ export default async function Home() {
     return (
         <>
             <HeroSection homeInfo={pageData} />
-            <Skills tech={pageData.skills} />
+            <Skills tech={pageData.technologies} />
             <ProjectsSection />
             <TestimonialsSection />
             <WorkExperienceSection />

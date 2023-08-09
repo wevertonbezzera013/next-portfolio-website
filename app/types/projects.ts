@@ -1,5 +1,5 @@
 export type Skills = {
-    iconSvg: string;
     name: string;
+    iconSvg: string;
     startDate: string;
 };

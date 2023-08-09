@@ -9,7 +9,7 @@ export type HomePageInfo = {
     descriptionText: {
         raw: RichTextContent;
     };
-    skills: Skills[];
+    technologies: Skills[];
     profilePicture: {
         url: string;
     };
