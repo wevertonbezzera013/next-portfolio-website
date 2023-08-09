@@ -2,22 +2,37 @@ export const fetchHygraphQuery = async <T>(
     query: string,
     revalidate?: number
 ): Promise<T> => {
-    const response = await fetch(process.env.HYGRAPH_URL!, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
-        },
-        next: {
-            revalidate,
-        },
-        body: JSON.stringify({
-            query,
-        }),
-    });
+    try {
+        const response = await fetch(process.env.HYGRAPH_URL!, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
+            },
+            next: {
+                revalidate,
+            },
+            body: JSON.stringify({
+                query,
+            }),
+        });
 
-    const { data } = await response.json();
+        if (!response.ok) {
+            throw new Error(
+                `API request failed with status ${response.status}`
+            );
+        }
 
-    return data;
+        const responseData = await response.json();
+
+        if (!responseData.data) {
+            throw new Error("API response did not contain 'data' property");
+        }
+
+        return responseData.data;
+    } catch (error) {
+        console.error("An error occurred while fetching data:", error);
+        throw error; // Re-throw the error to handle it where the fetchHygraphQuery function is called
+    }
 };
