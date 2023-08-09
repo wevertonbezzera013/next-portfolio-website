@@ -1,5 +1,5 @@
 import { RichTextContent } from "@graphcms/rich-text-types";
-import { Skills } from "./projects";
+import { Project, Skills } from "./projects";
 
 export type HomePageInfo = {
     introduction: {
@@ -16,6 +16,7 @@ export type HomePageInfo = {
     badge: string;
     descriptionTitle: string;
     heroSectionItems: string;
+    highlightedProjects: Project[];
 };
 
 export type HomePageData = {
