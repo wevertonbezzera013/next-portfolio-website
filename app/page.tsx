@@ -48,8 +48,8 @@ export default async function Home() {
 
         return (
             <>
-                <HeroSection homeInfo={pageData} />
-                <Skills tech={pageData?.technologies} />
+                {/* <HeroSection homeInfo={pageData} />
+                <Skills tech={pageData?.technologies} /> */}
                 <ProjectsSection />
                 <TestimonialsSection />
                 <WorkExperienceSection />
