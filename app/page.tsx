@@ -44,10 +44,15 @@ const getPageData = async (): Promise<HomePageData> => {
 export default async function Home() {
     const { page: pageData } = await getPageData();
 
+    if (!pageData) {
+        // Return a fallback UI or loading state if homeInfo is undefined
+        return <div className="container">Loading...</div>;
+    }
+
     return (
         <>
-            <HeroSection homeInfo={pageData} />
-            <Skills tech={pageData?.technologies} />
+            <HeroSection homeInfo={pageData || null} />
+            <Skills tech={pageData?.technologies || null} />
             <ProjectsSection />
             <TestimonialsSection />
             <WorkExperienceSection />

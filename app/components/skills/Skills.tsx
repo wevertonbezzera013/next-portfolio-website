@@ -42,6 +42,11 @@ export const Skills = ({ tech }: skillsProps) => {
         setVisible(itemsPerPage);
     }, [isMobile, itemsPerPage]);
 
+    if (!tech) {
+        // Return a fallback UI or loading state if homeInfo is undefined
+        return <div className="container">Loading...</div>;
+    }
+
     return (
         <div className="flex flex-col container mt-52 md:my-10">
             <SectionTitle title="Technologies" className="text-text" />

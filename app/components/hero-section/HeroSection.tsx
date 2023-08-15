@@ -9,6 +9,11 @@ type HeroSectionProps = {
 };
 
 export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
+    if (!homeInfo) {
+        // Return a fallback UI or loading state if homeInfo is undefined
+        return <div className="container">Loading...</div>;
+    }
+
     return (
         <div className="text-text">
             <div className="container font-krona mt-2 md:mt-36 w-full h-[755px] flex flex-col">
