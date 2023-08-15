@@ -1,9 +1,7 @@
-import { HomePageData } from "../types/page-info";
-
-export const fetchHygraphQuery = async (
+export const fetchHygraphQuery = async <T>(
     query: string,
     revalidate?: number
-): Promise<HomePageData> => {
+): Promise<T> => {
     const response = await fetch(process.env.HYGRAPH_URL!, {
         method: "POST",
         headers: {
@@ -11,15 +9,15 @@ export const fetchHygraphQuery = async (
             Accept: "application/json",
             Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
         },
+        next: {
+            revalidate,
+        },
         body: JSON.stringify({
             query,
-            revalidate,
         }),
     });
 
     const { data } = await response.json();
-    console.log("HYGRAPH_URL: ", process.env.HYGRAPH_TOKEN);
 
-    // Here, make sure 'data' is properly typed as HomePageData
-    return data as HomePageData;
+    return data;
 };
