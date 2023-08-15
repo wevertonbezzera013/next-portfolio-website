@@ -16,10 +16,8 @@ export type HomePageInfo = {
     profilePicture: {
         url: string;
     };
-    slug: string;
 
     descriptionTitle: string;
-    highlightedProjects: Project[];
 };
 
 export type HomePageData = {
