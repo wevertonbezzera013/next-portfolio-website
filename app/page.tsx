@@ -42,21 +42,15 @@ const getPageData = async (): Promise<HomePageData> => {
 };
 
 export default async function Home() {
-    try {
-        const { page: pageData } = await getPageData();
+    const { page: pageData } = await getPageData();
 
-        return (
-            <>
-                <HeroSection homeInfo={pageData} />
-                <Skills tech={pageData?.technologies} />
-                <ProjectsSection />
-                <TestimonialsSection />
-                <WorkExperienceSection />
-            </>
-        );
-    } catch (error) {
-        console.error("Error rendering Home:", error);
-        // You can render an error message or fallback UI here
-        return <div>Error rendering Home</div>;
-    }
+    return (
+        <>
+            <HeroSection homeInfo={pageData} />
+            <Skills tech={pageData?.technologies} />
+            <ProjectsSection />
+            <TestimonialsSection />
+            <WorkExperienceSection />
+        </>
+    );
 }
