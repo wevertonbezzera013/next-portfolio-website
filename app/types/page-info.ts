@@ -2,23 +2,26 @@ import { RichTextContent } from "@graphcms/rich-text-types";
 import { Project, Skills } from "./projects";
 
 export type HomePageInfo = {
+    badges: {
+        name: string;
+    }[];
     introduction: {
-        raw: RichTextContent;
+        raw: string;
     };
     introductionTitle: string;
     descriptionText: {
-        raw: RichTextContent;
+        raw: string;
     };
     technologies: Skills[];
     profilePicture: {
         url: string;
     };
-    badge: string;
+    slug: string;
+
     descriptionTitle: string;
-    heroSectionItems: string;
     highlightedProjects: Project[];
 };
 
 export type HomePageData = {
-    page: HomePageInfo;
+    pages: HomePageInfo;
 };

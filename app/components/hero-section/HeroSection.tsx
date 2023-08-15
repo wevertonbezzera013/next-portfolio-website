@@ -21,10 +21,10 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                             Weverton B. Costa
                         </h1>
                         <div className="text-newBlue pb-2 md:pb-5 text-lg md:text-2xl">
-                            {homeInfo.introductionTitle}
+                            {homeInfo?.introductionTitle}
                         </div>
                         <div className="text-base md:text-lg">
-                            <RichText content={homeInfo.introduction.raw} />
+                            <div>{homeInfo?.introduction?.raw}</div>
                         </div>
                         <div className="hidden md:flex pt-10">
                             <a
@@ -132,10 +132,10 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
 
                     <div className="mt-8 md:mt-24 text-lg md:text-xl flex flex-col md:flex-row justify-between">
                         <div className="pr-2 text-lg md:pr-28">
-                            {homeInfo.descriptionTitle}
+                            {homeInfo?.descriptionTitle}
                         </div>
                         <div className="font-inter">
-                            <RichText content={homeInfo.descriptionText.raw} />
+                            <div>{homeInfo?.descriptionText?.raw}</div>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@ export const SkillsCardItem = ({ tech }: SkillsCardItemProps) => {
     const relativeTime = getRelativeTimeString(
         new Date(tech.startDate),
         "us-EN"
-    ).replace("ago", "of experience");
+    );
     return (
         <div className="flex flex-col items-center font-krona text-white bg-newBlue p-6 rounded-lg hover:bg-primary ease-in-out duration-300">
             <div className={cn("flex items-center text-lg")}>

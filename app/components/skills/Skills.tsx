@@ -41,16 +41,16 @@ export const Skills = ({ tech }: skillsProps) => {
     }, [isMobile, itemsPerPage]);
 
     return (
-        <section className="flex flex-col container mt-52 md:my-10">
+        <div className="flex flex-col container mt-52 md:my-10">
             <SectionTitle title="Technologies" className="text-text" />
             <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-10">
-                {tech.slice(0, visible).map((tech: ISkills, index: number) => (
-                    <SkillsCardItem key={index} tech={tech} />
+                {tech?.slice(0, visible).map((tech: ISkills, index: number) => (
+                    <SkillsCardItem key={tech?.name} tech={tech} />
                 ))}
             </div>
 
             {/* Gradient Load More Button */}
-            {visible < tech.length && (
+            {visible < tech?.length && (
                 <button
                     onClick={showMoreItems}
                     className="flex items-center gap-2 justify-center font-krona text-text hover:text-secondary ease-in-out duration-300 relative mt-3 p-4 rounded-lg"
@@ -59,6 +59,6 @@ export const Skills = ({ tech }: skillsProps) => {
                     <Icon name="FaAngleDown" />
                 </button>
             )}
-        </section>
+        </div>
     );
 };

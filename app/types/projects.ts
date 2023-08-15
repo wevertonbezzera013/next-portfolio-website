@@ -20,7 +20,7 @@ export type Project = {
     badges: string;
     shortDscription: string;
     description: {
-        raw: RichTextContent;
+        raw: string;
     };
     projectTitle: string;
     githubUrl?: string;

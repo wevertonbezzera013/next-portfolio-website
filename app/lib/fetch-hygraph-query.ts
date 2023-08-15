@@ -1,35 +1,25 @@
-export const fetchHygraphQuery = async <T>(
+import { HomePageData } from "../types/page-info";
+
+export const fetchHygraphQuery = async (
     query: string,
     revalidate?: number
-): Promise<T> => {
-    try {
-        const response = await fetch(process.env.HYGRAPH_URL!, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
-            },
-            body: JSON.stringify({
-                query,
-            }),
-        });
+): Promise<HomePageData> => {
+    const response = await fetch(process.env.HYGRAPH_URL!, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
+        },
+        body: JSON.stringify({
+            query,
+            revalidate,
+        }),
+    });
 
-        if (!response.ok) {
-            throw new Error(
-                `API request failed with status ${response.status}`
-            );
-        }
+    const { data } = await response.json();
+    console.log(data);
 
-        const responseData = await response.json();
-
-        if (!responseData.data) {
-            throw new Error("API response did not contain 'data' property");
-        }
-
-        return responseData.data;
-    } catch (error) {
-        console.error("An error occurred while fetching data:", error);
-        throw error; // Re-throw the error to handle it where the fetchHygraphQuery function is called
-    }
+    // Here, make sure 'data' is properly typed as HomePageData
+    return data as HomePageData;
 };
