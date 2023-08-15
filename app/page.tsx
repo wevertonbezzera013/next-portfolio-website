@@ -4,7 +4,7 @@ import { Skills } from "./components/skills/Skills";
 import { TestimonialsSection } from "./components/testimonials-section/TestimonialsSection";
 import { WorkExperienceSection } from "./components/work-experience-section/WorkExperienceSection";
 
-import { HomePageData, HomePageInfo } from "./types/page-info";
+import { HomePageData } from "./types/page-info";
 import { fetchHygraphQuery } from "./lib/fetch-hygraph-query";
 
 export const metadata = {
@@ -38,21 +38,33 @@ const getPageData = async (): Promise<HomePageData> => {
       }
     `;
 
-    const response = await fetchHygraphQuery(query);
-    console.log(response);
-    return response;
+    try {
+        const response = await fetchHygraphQuery(query);
+        console.log("Fetched Page Data:", response);
+        return response;
+    } catch (error) {
+        console.error("Error fetching page data:", error);
+        throw error;
+    }
 };
 
 export default async function Home() {
-    const { page: pageData } = await getPageData();
-    console.log(pageData?.technologies);
-    return (
-        <>
-            <HeroSection homeInfo={pageData} />
-            <Skills tech={pageData?.technologies} />
-            <ProjectsSection />
-            <TestimonialsSection />
-            <WorkExperienceSection />
-        </>
-    );
+    try {
+        const { page: pageData } = await getPageData();
+        console.log("Technologies:", pageData?.technologies);
+
+        return (
+            <>
+                <HeroSection homeInfo={pageData} />
+                <Skills tech={pageData?.technologies} />
+                <ProjectsSection />
+                <TestimonialsSection />
+                <WorkExperienceSection />
+            </>
+        );
+    } catch (error) {
+        console.error("Error rendering Home:", error);
+        // You can render an error message or fallback UI here
+        return <div>Error rendering Home</div>;
+    }
 }
