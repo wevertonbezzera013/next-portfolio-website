@@ -11,6 +11,8 @@ type skillsProps = {
 };
 
 export const Skills = ({ tech }: skillsProps) => {
+    console.log("tech:", tech);
+
     const [isMobile, setIsMobile] = useState(false);
     const itemsPerPage = isMobile ? 4 : 8;
     const [visible, setVisible] = useState(itemsPerPage);
@@ -44,9 +46,15 @@ export const Skills = ({ tech }: skillsProps) => {
         <div className="flex flex-col container mt-52 md:my-10">
             <SectionTitle title="Technologies" className="text-text" />
             <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-10">
-                {tech?.slice(0, visible).map((tech: ISkills, index: number) => (
-                    <SkillsCardItem key={tech?.name} tech={tech} />
-                ))}
+                {tech?.length ? (
+                    <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-10">
+                        {tech?.slice(0, visible).map((tech: ISkills) => (
+                            <SkillsCardItem key={tech?.name} tech={tech} />
+                        ))}
+                    </div>
+                ) : (
+                    <p>No technologies available.</p>
+                )}
             </div>
 
             {/* Gradient Load More Button */}

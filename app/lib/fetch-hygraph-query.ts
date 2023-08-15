@@ -1,11 +1,24 @@
 import { HomePageData } from "../types/page-info";
 
+interface CachedData {
+    data: HomePageData;
+    timestamp: number;
+}
+
+let cachedData: CachedData | null = null;
+
 export const fetchHygraphQuery = async (
     query: string,
     revalidate?: number
 ): Promise<HomePageData> => {
     try {
-        console.log("Fetching data with query:", query);
+        if (
+            cachedData &&
+            revalidate &&
+            Date.now() - cachedData.timestamp < revalidate
+        ) {
+            return cachedData.data;
+        }
 
         const response = await fetch(process.env.HYGRAPH_URL!, {
             method: "POST",
@@ -25,12 +38,16 @@ export const fetchHygraphQuery = async (
         }
 
         const content = await response.text();
-        console.log("API Response Content:", content);
 
         try {
             const { data } = JSON.parse(content);
-            console.log("Parsed Data:", data);
-            return data as HomePageData;
+
+            cachedData = {
+                data: data as HomePageData,
+                timestamp: Date.now(),
+            };
+
+            return cachedData.data;
         } catch (jsonError) {
             console.error("Error parsing JSON:", jsonError);
             throw jsonError;

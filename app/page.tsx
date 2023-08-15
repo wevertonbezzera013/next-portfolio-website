@@ -38,20 +38,13 @@ const getPageData = async (): Promise<HomePageData> => {
       }
     `;
 
-    try {
-        const response = await fetchHygraphQuery(query);
-        console.log("Fetched Page Data:", response);
-        return response;
-    } catch (error) {
-        console.error("Error fetching page data:", error);
-        throw error;
-    }
+    const response = await fetchHygraphQuery(query);
+    return response;
 };
 
 export default async function Home() {
     try {
         const { page: pageData } = await getPageData();
-        console.log("Technologies:", pageData?.technologies);
 
         return (
             <>
