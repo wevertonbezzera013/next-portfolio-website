@@ -1,5 +1,8 @@
-export const fetchHygraphQuery = async <T>(query: string): Promise<T> => {
-    const response = await fetch(process.env.HYGRAPH_URL!, {
+export const fetchHygraphQuery = async <T>(
+    query: string,
+    revalidate?: number
+): Promise<T> => {
+    const requestOptions = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -9,7 +12,15 @@ export const fetchHygraphQuery = async <T>(query: string): Promise<T> => {
         body: JSON.stringify({
             query,
         }),
-    });
+    };
+
+    const response = await fetch(process.env.HYGRAPH_URL!, requestOptions);
+
+    if (!response.ok) {
+        throw new Error(
+            `Error fetching data from HYGRAPH: ${response.statusText}`
+        );
+    }
 
     const { data } = await response.json();
 
