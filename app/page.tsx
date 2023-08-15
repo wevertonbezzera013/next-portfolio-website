@@ -38,8 +38,10 @@ const getPageData = async (): Promise<HomePageData> => {
       }
     `;
 
-    const response = await fetchHygraphQuery(query);
-    return response;
+    return fetchHygraphQuery(
+        query,
+        1000 * 60 * 60 * 24 // 1 day
+    );
 };
 
 export default async function Home() {
@@ -48,8 +50,8 @@ export default async function Home() {
 
         return (
             <>
-                {/* <HeroSection homeInfo={pageData} />
-                <Skills tech={pageData?.technologies} /> */}
+                <HeroSection homeInfo={pageData} />
+                <Skills tech={pageData?.technologies} />
                 <ProjectsSection />
                 <TestimonialsSection />
                 <WorkExperienceSection />
