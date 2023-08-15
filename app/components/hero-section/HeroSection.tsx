@@ -24,7 +24,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                             {homeInfo?.introductionTitle}
                         </div>
                         <div className="text-base md:text-lg">
-                            <div>{homeInfo?.introduction?.raw}</div>
+                            <RichText content={homeInfo?.introduction?.raw} />
                         </div>
                         <div className="hidden md:flex pt-10">
                             <a
@@ -135,7 +135,9 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                             {homeInfo?.descriptionTitle}
                         </div>
                         <div className="font-inter">
-                            <div>{homeInfo?.descriptionText?.raw}</div>
+                            <RichText
+                                content={homeInfo?.descriptionText?.raw}
+                            />
                         </div>
                     </div>
                 </div>

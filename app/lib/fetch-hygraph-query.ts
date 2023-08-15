@@ -18,7 +18,7 @@ export const fetchHygraphQuery = async (
     });
 
     const { data } = await response.json();
-    console.log(data);
+    console.log("HYGRAPH_URL: ", process.env.HYGRAPH_TOKEN);
 
     // Here, make sure 'data' is properly typed as HomePageData
     return data as HomePageData;

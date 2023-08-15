@@ -6,11 +6,11 @@ export type HomePageInfo = {
         name: string;
     }[];
     introduction: {
-        raw: string;
+        raw: RichTextContent;
     };
     introductionTitle: string;
     descriptionText: {
-        raw: string;
+        raw: RichTextContent;
     };
     technologies: Skills[];
     profilePicture: {
@@ -23,5 +23,5 @@ export type HomePageInfo = {
 };
 
 export type HomePageData = {
-    pages: HomePageInfo;
+    page: HomePageInfo;
 };

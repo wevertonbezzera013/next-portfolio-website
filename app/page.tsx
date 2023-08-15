@@ -1,15 +1,11 @@
-import { gql } from "graphql-tag";
 import { HeroSection } from "./components/hero-section/HeroSection";
 import { ProjectsSection } from "./components/projects-section/ProjectsSection";
 import { Skills } from "./components/skills/Skills";
 import { TestimonialsSection } from "./components/testimonials-section/TestimonialsSection";
 import { WorkExperienceSection } from "./components/work-experience-section/WorkExperienceSection";
 
-import { GraphQLClient } from "graphql-request";
-
 import { HomePageData, HomePageInfo } from "./types/page-info";
 import { fetchHygraphQuery } from "./lib/fetch-hygraph-query";
-import { data } from "autoprefixer";
 
 export const metadata = {
     title: "Home",
@@ -42,14 +38,14 @@ const getPageData = async (): Promise<HomePageData> => {
       }
     `;
 
-    const response = await fetchHygraphQuery(query, 1000 * 60 * 60 * 24);
-    console.log(response); // Log the entire response
+    const response = await fetchHygraphQuery(query);
+    console.log(response);
     return response;
 };
 
 export default async function Home() {
-    const { pages: pageData } = await getPageData();
-
+    const { page: pageData } = await getPageData();
+    console.log(pageData?.technologies);
     return (
         <>
             <HeroSection homeInfo={pageData} />
