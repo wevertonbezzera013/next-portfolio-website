@@ -1,8 +1,8 @@
-import { cn } from "@/app/lib/utils";
 import Link from "next/link";
 import NextLink from "next/link";
 import { ComponentProps } from "react";
 import { Icon } from "../icons/icons";
+import { cn } from "../../lib/utils";
 
 type LinkProps = ComponentProps<typeof NextLink>;
 
