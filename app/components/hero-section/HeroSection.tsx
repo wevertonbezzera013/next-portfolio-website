@@ -1,18 +1,21 @@
-import { HomePageInfo } from "@/app/types/page-info";
 import { Icon } from "../icons/icons";
 import { HeroSectionItems } from "./HeroSectionItems";
 import HeroSectionProfileImage from "./HeroSectionProfileImage";
-import { RichText } from "../rich-text";
+
+import { HomePageInfo } from "../../types/page-info";
+import RichText from "../rich-text";
 
 type HeroSectionProps = {
     homeInfo: HomePageInfo;
 };
 
 export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
-    if (!homeInfo) {
+    /* if (!homeInfo) {
         // Return a fallback UI or loading state if homeInfo is undefined
         return <div className="container">Loading...</div>;
-    }
+    } */
+
+    console.log(homeInfo);
 
     return (
         <div className="text-text">
@@ -30,9 +33,8 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                                 "Fallback Introduction Title"}
                         </div>
                         <div className="text-base md:text-lg">
-                            <RichText
-                                content={homeInfo?.introduction?.raw || ""}
-                            />
+                            {/* <RichText content={homeInfo?.introduction || []} /> */}
+                            <div></div>
                         </div>
                         <div className="hidden md:flex pt-10">
                             <a
@@ -143,9 +145,9 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                             {homeInfo?.descriptionTitle}
                         </div>
                         <div className="font-inter">
-                            <RichText
-                                content={homeInfo?.descriptionText?.raw || ""}
-                            />
+                            {/* <RichText
+                                content={homeInfo?.descriptionText || []}
+                            /> */}
                         </div>
                     </div>
                 </div>

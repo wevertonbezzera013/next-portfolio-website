@@ -1,17 +1,28 @@
-import { RichText as CMSRitchText } from "@graphcms/rich-text-react-renderer";
+import { BlockContent } from "@sanity/block-content-to-react";
 import { ComponentProps } from "react";
+import { PortableTextBlock } from "sanity";
 
-type RichTextProps = ComponentProps<typeof CMSRitchText>;
+type RichTextProps = {
+    content: PortableTextBlock[];
+};
 
-export const RichText = ({ ...props }: RichTextProps) => {
+const RichText: React.FC<RichTextProps> = ({ content }) => {
     return (
-        <CMSRitchText
-            {...props}
-            renderers={{
-                bold: ({ children }) => (
-                    <b className="text-primary">{children}</b>
-                ),
+        <BlockContent
+            blocks={content}
+            serializers={{
+                types: {
+                    // Add your custom serializers here if needed
+                },
+                marks: {
+                    strong: ({ children }: { children: React.ReactNode }) => (
+                        <b className="text-primary">{children}</b>
+                    ),
+                    // Add more mark serializers if needed
+                },
             }}
         />
     );
 };
+
+export default RichText;
