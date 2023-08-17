@@ -4,15 +4,15 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
 export default defineConfig({
-  name: 'default',
-  title: 'sanity-next-portfolio',
+    name: 'default',
+    title: 'sanity-next-portfolio',
 
-  projectId: 'dw5bak2b',
-  dataset: 'production',
+    projectId: 'dw5bak2b',
+    dataset: 'production',
 
-  plugins: [deskTool(), visionTool()],
+    plugins: [deskTool(), visionTool()],
 
-  schema: {
-    types: schemaTypes,
-  },
+    schema: {
+        types: schemaTypes,
+    },
 })
