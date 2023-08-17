@@ -1,8 +1,6 @@
 "use client";
-import { cn, getRelativeTimeString } from "@/app/lib/utils";
 import { Icon } from "../icons/icons";
 import Link from "next/link";
-import link from "next/link";
 import { useRef } from "react";
 
 type ProjectsSectionCardItemProps = {

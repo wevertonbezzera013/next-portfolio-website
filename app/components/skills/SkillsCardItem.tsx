@@ -1,7 +1,8 @@
 "use client";
-import { cn, getRelativeTimeString } from "@/app/lib/utils";
+
+import { getRelativeTimeString, cn } from "../../lib/utils";
 import { Icon } from "../icons/icons";
-import { Skills as ISkills } from "@/app/types/projects";
+import { Skills as ISkills } from "../../types/projects";
 
 type SkillsCardItemProps = {
     tech: ISkills;

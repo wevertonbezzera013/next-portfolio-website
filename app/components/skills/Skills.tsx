@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { SkillsCardItem } from "./SkillsCardItem";
 import { Icon } from "../icons/icons";
 import { SectionTitle } from "../section-title/SectionTitle";
-import { Skills as ISkills } from "@/app/types/projects";
+import { Skills as ISkills } from "../../types/projects";
 
 type skillsProps = {
     tech: ISkills[];

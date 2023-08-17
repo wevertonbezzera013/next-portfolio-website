@@ -1,5 +1,3 @@
-import { RichTextContent } from "@graphcms/rich-text-types";
-
 export type Skills = {
     name: string;
     iconSvg: string;

@@ -1,5 +1,4 @@
 import { BlockContent } from "@sanity/block-content-to-react";
-import { ComponentProps } from "react";
 import { PortableTextBlock } from "sanity";
 
 type RichTextProps = {
