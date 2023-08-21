@@ -43,14 +43,14 @@ export const TestimonialsSection = ({ content }: testimonialsProps) => {
                     }}
                     className="mr-32"
                 >
-                    {content.map((item: ITestimonials) => (
-                        <SwiperSlide key={item._id}>
+                    {content?.map((item: ITestimonials) => (
+                        <SwiperSlide key={item?._id}>
                             <TestimonialsCard
-                                label={item.name}
-                                image={item.profilePicture}
-                                title={item.name}
-                                subtitle={item.title}
-                                link={item.socialMediaLink}
+                                label={item?.name}
+                                image={item?.profilePicture}
+                                title={item?.name}
+                                subtitle={item?.title}
+                                link={item?.socialMediaLink}
                             />
                         </SwiperSlide>
                     ))}
