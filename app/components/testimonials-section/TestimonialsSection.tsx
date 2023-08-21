@@ -4,10 +4,12 @@ import { TestimonialsCard } from "./TestimonialsCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { getPage } from "../../../sanity/sanity-utils";
+import { getTestimonial } from "../../../sanity/sanity-utils";
 
 export const TestimonialsSection = async () => {
-    const testimonials = await getPage();
+    const testimonials = await getTestimonial();
+
+    console.log("TESTIMONIALS: ", testimonials);
 
     return (
         <section className="pb-36 px-9">
@@ -39,7 +41,7 @@ export const TestimonialsSection = async () => {
                     {testimonials.map((testimonialSection) => (
                         <SwiperSlide key={testimonialSection._id}>
                             <TestimonialsCard
-                                content={testimonialSection.testimonials}
+                                content={testimonialSection.testimonial}
                             />
                         </SwiperSlide>
                     ))}

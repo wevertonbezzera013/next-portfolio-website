@@ -1,5 +1,9 @@
 import { createClient, groq } from "next-sanity";
-import { HomePageInfo, HomePageProject } from "../app/types/page-info";
+import {
+    HomePageInfo,
+    HomePageProject,
+    HomePageTestimonial,
+} from "../app/types/page-info";
 
 export async function getProjects(): Promise<HomePageProject[]> {
     const client = createClient({
@@ -46,11 +50,28 @@ export async function getPage(): Promise<HomePageInfo[]> {
           content,
           title,
           socialMediaLink,
-          "profilePicture": profilePicture.asset->{
-            url,
-            alt
-          }
+          "profilePicture": profilePicture.asset->url
         }
+      }`
+    );
+}
+
+export async function getTestimonial(): Promise<HomePageTestimonial[]> {
+    const client = createClient({
+        projectId: "dw5bak2b",
+        dataset: "production",
+        apiVersion: "2023-03-04",
+    });
+
+    return client.fetch(
+        groq`*[_type == "page"]{
+        _id,
+        _createdAt,
+          name,
+          content,
+          title,
+          socialMediaLink,
+          "profilePicture": profilePicture.asset->url
       }`
     );
 }

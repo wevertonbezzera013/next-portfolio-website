@@ -22,3 +22,13 @@ export type HomePageInfo = {
     projects: IProject[];
     testimonials: ITestimonials[];
 };
+
+export type HomePageTestimonial = {
+    testimonial: HomePageTestimonial;
+    _id: string;
+    name: string;
+    content: string;
+    title: string;
+    socialMediaLink: string;
+    profilePicture: string;
+};

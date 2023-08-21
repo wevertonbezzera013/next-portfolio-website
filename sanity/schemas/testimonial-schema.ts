@@ -31,13 +31,6 @@ const testimonial = {
             options: {
                 hospot: true,
             },
-            fields: [
-                {
-                    name: "alt",
-                    title: "Alt",
-                    type: "string",
-                },
-            ],
         },
     ],
 };
