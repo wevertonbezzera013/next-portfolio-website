@@ -33,7 +33,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                                 "Fallback Introduction Title"}
                         </div>
                         <div className="text-base md:text-lg">
-                            {/* <RichText content={homeInfo?.introduction || []} /> */}
+                            <RichText content={homeInfo?.introduction || []} />
                             <div></div>
                         </div>
                         <div className="hidden md:flex pt-10">

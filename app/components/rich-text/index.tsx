@@ -1,5 +1,5 @@
-import { BlockContent } from "@sanity/block-content-to-react";
-import { PortableTextBlock } from "sanity";
+import React from "react";
+import { PortableTextBlock, PortableTextChild, PortableTextSpan } from "sanity";
 
 type RichTextProps = {
     content: PortableTextBlock[];
@@ -7,20 +7,32 @@ type RichTextProps = {
 
 const RichText: React.FC<RichTextProps> = ({ content }) => {
     return (
-        <BlockContent
-            blocks={content}
-            serializers={{
-                types: {
-                    // Add your custom serializers here if needed
-                },
-                marks: {
-                    strong: ({ children }: { children: React.ReactNode }) => (
-                        <b className="text-primary">{children}</b>
-                    ),
-                    // Add more mark serializers if needed
-                },
-            }}
-        />
+        <div>
+            {content.map((block, index) => {
+                if (block._type === "block" && block.children) {
+                    const children = block.children as PortableTextChild[];
+
+                    // Filter out non-'span' children and extract text
+                    const text = children
+                        .filter((child) => child._type === "span")
+                        .map((span: PortableTextChild) => {
+                            if ("text" in span) {
+                                return span.text;
+                            }
+                            return "";
+                        })
+                        .join(" ");
+
+                    return (
+                        <b key={index} className="text-primary">
+                            {text}
+                        </b>
+                    );
+                }
+
+                return null; // Handle other block types if needed
+            })}
+        </div>
     );
 };
 
