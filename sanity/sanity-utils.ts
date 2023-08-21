@@ -31,17 +31,26 @@ export async function getPage(): Promise<HomePageInfo[]> {
 
     return client.fetch(
         groq`*[_type == "page"]{
-            _id,
-            _createdAt,
-            name,
-            "slug": slug.current,
-            introductionTitle,
-            introduction,
-            "profilePicture": profilePicture.asset->url,
-            descriptionTitle,
-            descriptionText,
-            skills,
-            testimonials
-        }`
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        introductionTitle,
+        introduction,
+        "profilePicture": profilePicture.asset->url,
+        descriptionTitle,
+        descriptionText,
+        skills,
+        "testimonials": testimonials[]->{
+          name,
+          content,
+          title,
+          socialMediaLink,
+          "profilePicture": profilePicture.asset->{
+            url,
+            alt
+          }
+        }
+      }`
     );
 }

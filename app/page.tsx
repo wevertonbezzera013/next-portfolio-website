@@ -13,6 +13,8 @@ export const metadata = {
 export default async function Home() {
     const projects = await getPage();
 
+    console.log(projects);
+
     return (
         <>
             <HeroSection />
