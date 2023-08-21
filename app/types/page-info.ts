@@ -1,24 +1,17 @@
 import { PortableTextBlock } from "@sanity/types";
-import { Project, Skills } from "./projects";
-
-export type Badge = {
-    name: string;
-};
-
-export type Introduction = PortableTextBlock[];
-
-export type DescriptionText = PortableTextBlock[];
-
-export type ProfilePicture = {
-    url: string;
-};
+import { Project, ISkills } from "./projects";
 
 export type HomePageInfo = {
-    introduction: Introduction;
+    introduction: PortableTextBlock;
     introductionTitle: string;
-    descriptionText: DescriptionText;
-    profilePicture: ProfilePicture;
+    descriptionText: PortableTextBlock;
+    profilePicture: string;
     descriptionTitle: string;
+    _id: string;
+    _createdAt: Date;
+    name: string;
+    slug: string;
+    skills: ISkills[];
 };
 
 export type HomePageData = {

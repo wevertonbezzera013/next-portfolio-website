@@ -1,5 +1,5 @@
 import { createClient, groq } from "next-sanity";
-import { HomePageData } from "../app/types/page-info";
+import { HomePageData, HomePageInfo } from "../app/types/page-info";
 
 export async function getProjects() {
     const client = createClient({
@@ -22,7 +22,7 @@ export async function getProjects() {
     );
 }
 
-export async function getPage(): Promise<HomePageData> {
+export async function getPage(): Promise<HomePageInfo[]> {
     const client = createClient({
         projectId: "dw5bak2b",
         dataset: "production",
@@ -39,7 +39,8 @@ export async function getPage(): Promise<HomePageData> {
             introduction,
             "profilePicture": profilePicture.asset->url,
             descriptionTitle,
-            descriptionText
+            descriptionText,
+            skills
         }`
     );
 }

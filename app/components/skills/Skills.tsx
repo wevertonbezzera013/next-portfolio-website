@@ -4,15 +4,13 @@ import { useEffect, useState } from "react";
 import { SkillsCardItem } from "./SkillsCardItem";
 import { Icon } from "../icons/icons";
 import { SectionTitle } from "../section-title/SectionTitle";
-import { Skills as ISkills } from "../../types/projects";
+import { ISkills } from "../../types/projects";
 
 type skillsProps = {
     tech: ISkills[];
 };
 
 export const Skills = ({ tech }: skillsProps) => {
-    console.log("tech:", tech);
-
     const [isMobile, setIsMobile] = useState(false);
     const itemsPerPage = isMobile ? 4 : 8;
     const [visible, setVisible] = useState(itemsPerPage);
@@ -54,7 +52,7 @@ export const Skills = ({ tech }: skillsProps) => {
                 {tech?.length ? (
                     <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-10">
                         {tech?.slice(0, visible).map((tech: ISkills) => (
-                            <SkillsCardItem key={tech?.name} tech={tech} />
+                            <SkillsCardItem key={tech?.skillName} tech={tech} />
                         ))}
                     </div>
                 ) : (

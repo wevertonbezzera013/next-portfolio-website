@@ -1,5 +1,6 @@
 import { getPage } from "../sanity/sanity-utils";
 import { HeroSection } from "./components/hero-section/HeroSection";
+
 import { ProjectsSection } from "./components/projects-section/ProjectsSection";
 import { Skills } from "./components/skills/Skills";
 import { TestimonialsSection } from "./components/testimonials-section/TestimonialsSection";
@@ -11,14 +12,20 @@ export const metadata = {
 
 export default async function Home() {
     const projects = await getPage();
+
     console.log(projects);
+
     return (
         <>
-            <HeroSection homeInfo={projects.page} />
-            {/* <Skills tech={pageData?.technologies || null} /> */}
-            <ProjectsSection />
-            <TestimonialsSection />
-            <WorkExperienceSection />
+            <HeroSection />
+            {projects.map((HeroSection) => (
+                <div key={HeroSection._id}>
+                    <Skills tech={HeroSection.skills} />
+                    <ProjectsSection />
+                    <TestimonialsSection />
+                    <WorkExperienceSection />
+                </div>
+            ))}
         </>
     );
 }

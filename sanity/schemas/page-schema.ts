@@ -48,6 +48,37 @@ const page = {
             type: "array",
             of: [{ type: "block" }],
         },
+        {
+            name: "skills",
+            title: "Skills",
+            type: "array",
+            of: [
+                {
+                    type: "object",
+                    fields: [
+                        {
+                            name: "skillName",
+                            title: "Skill Name",
+                            type: "string",
+                        },
+                        {
+                            name: "startDate",
+                            title: "Start Date",
+                            type: "date",
+                        },
+                        {
+                            name: "icon",
+                            icon: "string",
+                            title: "Icon",
+                            type: "string", // Keeping it as "string" for URL or reference
+                        },
+                    ],
+                },
+            ],
+            options: {
+                layout: "tags", // Display skills in a grid layout
+            },
+        },
     ],
 };
 

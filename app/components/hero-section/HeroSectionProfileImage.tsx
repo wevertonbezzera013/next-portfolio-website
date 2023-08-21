@@ -2,7 +2,13 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function HeroSectionProfileImage() {
+interface HeroSectionProfileImageProps {
+    imageSrc: string;
+}
+
+export default function HeroSectionProfileImage({
+    imageSrc,
+}: HeroSectionProfileImageProps) {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     const handleMouseMove = (event: { clientX: any; clientY: any }) => {
@@ -43,8 +49,8 @@ export default function HeroSectionProfileImage() {
                 <Image
                     width={524}
                     height={572}
-                    src="/images/profile-pic.png"
-                    alt="Tom's profile pic"
+                    src={imageSrc}
+                    alt="Profile pic"
                     unoptimized
                 />
             </div>

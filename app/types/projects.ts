@@ -1,6 +1,6 @@
-export type Skills = {
-    name: string;
-    iconSvg: string;
+export type ISkills = {
+    skillName: string;
+    icon: string;
     startDate: string;
 };
 
