@@ -11,6 +11,8 @@ type skillsProps = {
 };
 
 export const Skills = ({ tech }: skillsProps) => {
+    console.log("tech:", tech);
+
     const [isMobile, setIsMobile] = useState(false);
     const itemsPerPage = isMobile ? 4 : 8;
     const [visible, setVisible] = useState(itemsPerPage);
