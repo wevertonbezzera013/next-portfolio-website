@@ -1,7 +1,7 @@
-"use client";
+// TestimonialsCard.tsx
+import { ITestimonials } from "../../types/projects";
 import { Icon } from "../icons/icons";
 import Image from "next/image";
-import { ITestimonials } from "../../types/projects";
 
 type TestimonialsCardProps = {
     content: ITestimonials[];
@@ -31,8 +31,8 @@ export const TestimonialsCard = ({ content }: TestimonialsCardProps) => {
 
                         <div className="flex items-center justify-center">
                             <Image
-                                src={item.profilePicture}
-                                alt="profile image"
+                                src={item.profilePicture} // Assuming your asset structure is correct
+                                alt={item.profilePicture}
                                 width={50}
                                 height={50}
                                 className="rounded-full"

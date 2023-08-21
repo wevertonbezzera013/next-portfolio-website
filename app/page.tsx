@@ -22,7 +22,7 @@ export default async function Home() {
                 <div key={HeroSection._id}>
                     <Skills tech={HeroSection.skills} />
                     <ProjectsSection />
-                    <TestimonialsSection content={HeroSection.testimonials} />
+                    <TestimonialsSection />
                     <WorkExperienceSection />
                 </div>
             ))}

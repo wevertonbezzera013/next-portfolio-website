@@ -4,17 +4,10 @@ import { TestimonialsCard } from "./TestimonialsCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { ITestimonials } from "../../types/projects";
+import { getPage } from "../../../sanity/sanity-utils";
 
-type testimonialsProps = {
-    content: ITestimonials[];
-};
-
-export const TestimonialsSection = ({ content }: testimonialsProps) => {
-    if (!content || content.length === 0) {
-        // Return a fallback UI or loading state if content is null or empty
-        return <div className="container">No testimonials available.</div>;
-    }
+export const TestimonialsSection = async () => {
+    const testimonials = await getPage();
 
     return (
         <section className="pb-36 px-9">
@@ -43,9 +36,13 @@ export const TestimonialsSection = ({ content }: testimonialsProps) => {
                     }}
                     className="mr-32"
                 >
-                    <SwiperSlide>
-                        <TestimonialsCard content={content} />
-                    </SwiperSlide>
+                    {testimonials.map((testimonialSection) => (
+                        <SwiperSlide key={testimonialSection._id}>
+                            <TestimonialsCard
+                                content={testimonialSection.testimonials}
+                            />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </div>
         </section>
