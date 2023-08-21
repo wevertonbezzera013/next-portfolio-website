@@ -20,7 +20,7 @@ export default async function Home() {
                 <div key={HeroSection._id}>
                     <Skills tech={HeroSection.skills} />
                     <ProjectsSection />
-                    <TestimonialsSection />
+                    <TestimonialsSection content={HeroSection.testimonials} />
                     <WorkExperienceSection />
                 </div>
             ))}

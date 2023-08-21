@@ -40,7 +40,8 @@ export async function getPage(): Promise<HomePageInfo[]> {
             "profilePicture": profilePicture.asset->url,
             descriptionTitle,
             descriptionText,
-            skills
+            skills,
+            testimonials
         }`
     );
 }

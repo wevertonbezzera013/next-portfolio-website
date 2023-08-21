@@ -6,7 +6,16 @@ export type ISkills = {
     startDate: string;
 };
 
-export type Project = {
+export type ITestimonials = {
+    _id: string;
+    name: string;
+    content: string;
+    title: string;
+    socialMediaLink: string;
+    profilePicture: string;
+};
+
+export type IProject = {
     _id: string;
     _createdAt: Date;
     name: string;
