@@ -32,14 +32,35 @@ const project = {
             ],
         },
         {
-            name: "github",
-            title: "Github",
-            type: "url",
-        },
-        {
-            name: "preview",
-            title: "Preview",
-            type: "url",
+            name: "links",
+            title: "Links",
+            type: "array",
+            of: [
+                {
+                    type: "object",
+                    fields: [
+                        {
+                            name: "linkName",
+                            title: "Link Name",
+                            type: "string",
+                        },
+                        {
+                            name: "url",
+                            title: "URL",
+                            type: "string",
+                        },
+                        {
+                            name: "icon",
+                            icon: "string",
+                            title: "Icon",
+                            type: "string", // Keeping it as "string" for URL or reference
+                        },
+                    ],
+                },
+            ],
+            options: {
+                layout: "tags", // Display skills in a grid layout
+            },
         },
         {
             name: "content",

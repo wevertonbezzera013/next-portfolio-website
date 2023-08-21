@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "@sanity/types";
+
 export type ISkills = {
     skillName: string;
     icon: string;
@@ -5,22 +7,16 @@ export type ISkills = {
 };
 
 export type Project = {
+    _id: string;
+    _createdAt: Date;
+    name: string;
     slug: string;
-    thumbnail: {
+    image: string;
+    links: {
+        _id: string;
+        linkName: string;
+        icon: string;
         url: string;
     };
-    pageImageOne: {
-        url: string;
-    };
-    pageImageTwo: {
-        url: string;
-    };
-    badges: string;
-    shortDscription: string;
-    description: {
-        raw: string;
-    };
-    projectTitle: string;
-    githubUrl?: string;
-    liveProjectUrl?: string;
+    content: PortableTextBlock;
 };

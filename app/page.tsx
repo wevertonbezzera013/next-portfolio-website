@@ -21,7 +21,7 @@ export default async function Home() {
             {projects.map((HeroSection) => (
                 <div key={HeroSection._id}>
                     <Skills tech={HeroSection.skills} />
-                    <ProjectsSection />
+                    <ProjectsSection projects={HeroSection.projects} />
                     <TestimonialsSection />
                     <WorkExperienceSection />
                 </div>

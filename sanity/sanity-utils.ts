@@ -1,7 +1,7 @@
 import { createClient, groq } from "next-sanity";
-import { HomePageData, HomePageInfo } from "../app/types/page-info";
+import { HomePageInfo, HomePageProject } from "../app/types/page-info";
 
-export async function getProjects() {
+export async function getProjects(): Promise<HomePageProject[]> {
     const client = createClient({
         projectId: "dw5bak2b",
         dataset: "production",
