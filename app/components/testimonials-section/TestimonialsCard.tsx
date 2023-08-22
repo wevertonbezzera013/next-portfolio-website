@@ -1,7 +1,5 @@
 "use client";
-import image from "next/image";
-import link from "next/link";
-import { title } from "process";
+
 import { HomePageTestimonial } from "../../types/page-info";
 import { Icon } from "../icons/icons";
 import Image from "next/image";
@@ -33,7 +31,7 @@ export const TestimonialsCard = ({ content }: TestimonialsCardProps) => {
 
                     <div className="flex items-center justify-center">
                         <Image
-                            src={content?.profilePicture}
+                            src={content?.picture}
                             alt="profile image"
                             width={50}
                             height={50}

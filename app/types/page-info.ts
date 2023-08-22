@@ -20,7 +20,6 @@ export type HomePageInfo = {
     slug: string;
     skills: ISkills[];
     projects: IProject[];
-    testimonials: ITestimonials[];
 };
 
 export type HomePageTestimonial = {
@@ -30,5 +29,5 @@ export type HomePageTestimonial = {
     content: string;
     title: string;
     socialMediaLink: string;
-    profilePicture: string;
+    picture: string;
 };

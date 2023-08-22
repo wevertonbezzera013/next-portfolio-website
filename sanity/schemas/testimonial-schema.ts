@@ -25,8 +25,8 @@ const testimonial = {
             type: "string",
         },
         {
-            name: "profilePicture",
-            title: "Profile Picture",
+            name: "picture",
+            title: "Picture",
             type: "image",
             options: {
                 hospot: true,

@@ -12,7 +12,7 @@ export type ITestimonials = {
     content: string;
     title: string;
     socialMediaLink: string;
-    profilePicture: string;
+    picture: string;
 };
 
 export type IProject = {
