@@ -23,10 +23,9 @@ export type HomePageInfo = {
 };
 
 export type HomePageTestimonial = {
-    testimonial: HomePageTestimonial;
     _id: string;
     name: string;
-    content: string;
+    content: PortableTextBlock;
     title: string;
     socialMediaLink: string;
     picture: string;

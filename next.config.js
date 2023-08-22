@@ -4,7 +4,7 @@ const nextConfig = {
         appDir: true,
     },
     images: {
-        domains: ["media.graphassets.com"],
+        domains: ["cdn.sanity.io"], // Add 'cdn.sanity.io' to the list of allowed domains
     },
 };
 

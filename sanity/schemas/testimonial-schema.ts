@@ -22,7 +22,7 @@ const testimonial = {
         {
             name: "socialMediaLink",
             title: "Social Media Link",
-            type: "string",
+            type: "url",
         },
         {
             name: "picture",

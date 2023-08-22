@@ -1,16 +1,24 @@
 "use client";
 
-import { TestimonialsCard } from "./TestimonialsCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import TestimonialsCard from "./TestimonialsCard";
 import { getTestimonial } from "../../../sanity/sanity-utils";
+import { useEffect, useState } from "react";
+import { HomePageTestimonial } from "../../types/page-info";
 
-export const TestimonialsSection = async () => {
-    const testimonials = await getTestimonial();
+export const TestimonialsSection = () => {
+    const [testimonials, setTestimonials] = useState<HomePageTestimonial[]>([]); // Provide the correct type here
 
-    console.log("TESTIMONIALS: ", testimonials);
+    useEffect(() => {
+        async function fetchTestimonials() {
+            const content = await getTestimonial();
+            setTestimonials(content);
+        }
 
+        fetchTestimonials();
+    }, []);
     return (
         <section className="pb-36 px-9">
             <div className="flex md:p-0 items-center lex gap-4 md:gap-9">
@@ -38,10 +46,15 @@ export const TestimonialsSection = async () => {
                     }}
                     className="mr-32"
                 >
-                    {testimonials.map((testimonialSection) => (
-                        <SwiperSlide key={testimonialSection._id}>
+                    {testimonials.map((testimonial) => (
+                        <SwiperSlide key={testimonial._id}>
                             <TestimonialsCard
-                                content={testimonialSection.testimonial}
+                                _id={testimonial._id}
+                                name={testimonial.name}
+                                content={testimonial.content}
+                                title={testimonial.title}
+                                socialMediaLink={testimonial.socialMediaLink}
+                                picture={testimonial.picture}
                             />
                         </SwiperSlide>
                     ))}

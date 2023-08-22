@@ -64,14 +64,14 @@ export async function getTestimonial(): Promise<HomePageTestimonial[]> {
     });
 
     return client.fetch(
-        groq`*[_type == "page"]{
+        groq`*[_type == "testimonial"]{
         _id,
         _createdAt,
-          name,
-          content,
-          title,
-          socialMediaLink,
-          "profilePicture": profilePicture.asset->url
+        name,
+        content,
+        title,
+        socialMediaLink,
+        "picture": picture.asset->url
       }`
     );
 }
