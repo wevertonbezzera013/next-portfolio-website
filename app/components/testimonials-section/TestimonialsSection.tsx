@@ -82,16 +82,18 @@ export const TestimonialsSection = () => {
                     >
                         {testimonials.map((testimonial) => (
                             <SwiperSlide key={testimonial._id}>
-                                <TestimonialsCard
-                                    _id={testimonial._id}
-                                    name={testimonial.name}
-                                    content={testimonial.content}
-                                    title={testimonial.title}
-                                    socialMediaLink={
-                                        testimonial.socialMediaLink
-                                    }
-                                    picture={testimonial.picture}
-                                />
+                                <div>
+                                    <TestimonialsCard
+                                        _id={testimonial._id}
+                                        name={testimonial.name}
+                                        content={testimonial.content}
+                                        title={testimonial.title}
+                                        socialMediaLink={
+                                            testimonial.socialMediaLink
+                                        }
+                                        picture={testimonial.picture}
+                                    />
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
