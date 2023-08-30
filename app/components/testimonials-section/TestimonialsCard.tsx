@@ -1,5 +1,4 @@
 import { PortableText } from "@portabletext/react";
-import { Icon } from "../icons/icons";
 import Image from "next/image";
 import { HomePageTestimonial } from "../../types/page-info";
 
@@ -14,7 +13,7 @@ const TestimonialsCard = ({
     return (
         <div
             key={_id}
-            className="flex items-center container gap-9 bg-button hover:bg-newBlue rounded-2xl w-[300px] h-[1100px] md:w-full md:h-[600px] ease-in-out duration-300 py-2 px-4"
+            className="flex items-center container gap-9 bg-button hover:bg-newBlue rounded-2xl w-[300px] h-[400px] md:w-full md:h-[300px] ease-in-out duration-300 py-2 px-4"
         >
             <a href={socialMediaLink} target="_blank">
                 <div className="flex flex-col items-center gap-9">
@@ -31,6 +30,7 @@ const TestimonialsCard = ({
                             width={50}
                             height={50}
                             className="rounded-full"
+                            loading="lazy"
                         />
 
                         <div className="font-inter ml-3">

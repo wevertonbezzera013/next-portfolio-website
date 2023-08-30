@@ -5,3 +5,7 @@
 .container {
     @apply mx-auto w-full max-w-[1200px] px-6;
 }
+
+.swiper-slide {
+    @apply h-[436px] !important;
+}
