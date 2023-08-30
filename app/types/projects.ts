@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "@sanity/types";
+import { type } from "os";
 
 export type ISkills = {
     skillName: string;
@@ -28,4 +29,18 @@ export type IProject = {
         url: string;
     };
     content: PortableTextBlock;
+};
+
+export type ITechTag = {
+    _id: string;
+    _createdAt: Date;
+    name: string;
+    tech: string;
+};
+
+export type IExperienceSkills = {
+    _id: string;
+    _createdAt: Date;
+    name: string;
+    skillDescription: PortableTextBlock;
 };

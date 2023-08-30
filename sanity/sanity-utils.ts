@@ -1,5 +1,6 @@
 import { createClient, groq } from "next-sanity";
 import {
+    HomePageExperience,
     HomePageInfo,
     HomePageProject,
     HomePageTestimonial,
@@ -72,6 +73,32 @@ export async function getTestimonial(): Promise<HomePageTestimonial[]> {
         title,
         socialMediaLink,
         "picture": picture.asset->url
+      }`
+    );
+}
+
+export async function getExperience(): Promise<HomePageExperience[]> {
+    const client = createClient({
+        projectId: "dw5bak2b",
+        dataset: "production",
+        apiVersion: "2023-03-04",
+    });
+
+    return client.fetch(
+        groq`*[_type == "experience"]{
+        _id,
+        _createdAt,
+        name,
+        company,
+        role,
+        startDate,
+        endDate,
+        description,
+        "companyPicture": companyPicture.asset->url,
+        companyURL,
+        skills,
+        techTags,
+        year
       }`
     );
 }

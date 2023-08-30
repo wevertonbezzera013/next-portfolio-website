@@ -1,4 +1,4 @@
-import { getPage } from "../sanity/sanity-utils";
+import { getExperience, getPage } from "../sanity/sanity-utils";
 import { HeroSection } from "./components/hero-section/HeroSection";
 
 import { ProjectsSection } from "./components/projects-section/ProjectsSection";

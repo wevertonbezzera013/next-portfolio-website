@@ -1,23 +1,35 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { Badges } from "../Badges/Badges";
+import { HomePageExperience } from "../../types/page-info";
+import { PortableText } from "@portabletext/react";
 
-export const WorkExperienceItem = () => {
+export const WorkExperienceItem = ({
+    company,
+    role,
+    startDate,
+    endDate,
+    description,
+    companyPicture,
+    companyURL,
+    skills,
+    techTags,
+    year,
+}: HomePageExperience) => {
+    const formattedStartDate = new Date(startDate).toLocaleDateString();
+    const formattedEndDate = new Date(endDate).toLocaleDateString();
     return (
         <div className="container grid grid-cols-[40px,1fr] gap-4 md:gap-10">
             <div className="flex flex-col items-center gap-4 mr-1">
                 <div>
                     <span className="font-krona text-white text-sm md:text-base bg-newBlue p-1 md:p-2">
-                        2022
+                        {year}
                     </span>
                 </div>
                 <div className="rounded-full border border-newBlue p-0.5 hover:p-1 duration-300 ease-in-out">
-                    <a
-                        href="https://www.linkedin.com/company/boostcommerce/"
-                        target="_blank"
-                    >
+                    <a href={companyURL} target="_blank">
                         <Image
-                            src="/images/boost-icon.png"
+                            src={companyPicture}
                             alt="company logo"
                             width={50}
                             height={50}
@@ -31,46 +43,43 @@ export const WorkExperienceItem = () => {
             <div>
                 <div className="flex flex-col gap-2 text-sm sm:text-base">
                     <a
-                        href="https://www.linkedin.com/company/boostcommerce/"
+                        href={companyURL}
                         target="_blank"
                         className="text-white hover:text-grey duration-300 ease-in-out text-lg font-krona"
                     >
-                        BoostCommerce
+                        {company}
                     </a>
                     <h4 className="text-white text-base capitalize font-inter">
-                        Front-end Technical Support Engineer
+                        {role}
                     </h4>
                     <span className="font-inter text-sm text-white font-bold">
-                        may 2022 - may 2023
+                        {formattedStartDate} - {formattedEndDate}
                     </span>
                     <p className="text-white font-krona text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc vulputate libero et velit interdum, ac aliquet odio
-                        mattis. Class aptent taciti sociosqu ad litora torquent
-                        per conubia nostra, per inceptos himenaeos.
+                        <PortableText value={description} />
                     </p>
 
                     <div className="text-white font-inter pt-1">
                         <p className="font-bold">Skills</p>
                         <ul className="list-disc container pt-3">
-                            <li>
-                                Utilize Javascript, CSS, HTML, REACT, JQuery to
-                                setup and customize the company's app for
-                                customers store. lioubleshoot technical issues
-                                and provide efficient resolutions.
-                            </li>
-                            <li>
-                                Respond to and follow up on support inquiries
-                                via helpscout, slack. email, chat and phone.
-                            </li>
+                            {skills.map((skill, index) => (
+                                <li key={index}>
+                                    <PortableText
+                                        value={skill?.skillDescription}
+                                    />
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     <div className="mt-3 flex flex-wrap gap-4 md:gap-3">
-                        <Badges label="Javascript" className="text-xs" />
-                        <Badges label="Javascript" className="text-xs" />
-                        <Badges label="Javascript" className="text-xs" />
-                        <Badges label="Javascript" className="text-xs" />
+                        {techTags.map((techTag, index) => (
+                            <Badges
+                                key={index}
+                                label={techTag.tech}
+                                className="text-xs"
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

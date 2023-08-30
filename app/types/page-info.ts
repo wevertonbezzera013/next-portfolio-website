@@ -1,5 +1,11 @@
 import { PortableTextBlock } from "@sanity/types";
-import { ISkills, ITestimonials, IProject } from "./projects";
+import {
+    ISkills,
+    ITestimonials,
+    IProject,
+    ITechTag,
+    IExperienceSkills,
+} from "./projects";
 
 export type HomePageProject = {
     _id: string;
@@ -29,4 +35,20 @@ export type HomePageTestimonial = {
     title: string;
     socialMediaLink: string;
     picture: string;
+};
+
+export type HomePageExperience = {
+    _id: string;
+    _createdAt: Date;
+    name: string;
+    company: string;
+    role: string;
+    startDate: Date;
+    endDate: Date;
+    description: PortableTextBlock;
+    companyPicture: string;
+    companyURL: string;
+    skills: IExperienceSkills[];
+    techTags: ITechTag[];
+    year: string;
 };
