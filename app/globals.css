@@ -7,12 +7,12 @@
 }
 
 .swiper-slide {
-    @apply h-[436px] w-[577px] flex !important;
+    @apply h-[436px] md:w-[577px] flex !important;
 }
 
 /* Apply the styles only for Firefox */
 @-moz-document url-prefix() {
     .swiper-slide {
-        @apply h-[436px] w-[31.5%] flex !important;
+        @apply h-[436px] w-[10%] md:w-[31.5%] flex !important;
     }
 }
