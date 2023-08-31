@@ -123,7 +123,7 @@ export const HeroSection = async () => {
                         <div>
                             <div className="grid grid-cols-2 gap-2 text-base md:text-2xl break-words">
                                 <HeroSectionItems
-                                    label={"+4 Years"}
+                                    label={"Software Developer"}
                                     icon={"HiOutlineCursorClick"}
                                 />
                                 <HeroSectionItems

@@ -56,7 +56,8 @@ export const ContactSection = () => {
                         <div className="flex flex-col">
                             <form
                                 className="mt-12 w-full flex flex-col gap-4 font-inter text-text"
-                                onSubmit={handleSubmit(onSubmit)}
+                                action="https://formspree.io/f/xaygjqnb"
+                                method="POST"
                             >
                                 <div className="relative">
                                     <Icon
@@ -92,6 +93,7 @@ export const ContactSection = () => {
                                         Send Message
                                     </button>
                                 </div>
+                                <input type="hidden" name="_gotcha" />
                             </form>
                             <div className="absolute contents">
                                 <div className="mt-6">
