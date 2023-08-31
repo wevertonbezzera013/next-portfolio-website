@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="3000" viewBox="0 0 3000 3000">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 138.889px;
+        fill: #0f5edf;
+        text-anchor: middle;
+        font-family: "Krona One";
+      }
+    </style>
+  </defs>
+  <text id="WD" class="cls-1" transform="matrix(10.247, 0, 0, 10.061, 1527.999, 1935.132)"><tspan x="0">WD</tspan></text>
+</svg>
