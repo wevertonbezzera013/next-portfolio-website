@@ -16,21 +16,6 @@ export type HomePageProject = {
     techTags: ITechTag[];
 };
 
-export type HighlightedProject = {
-    _id: number;
-    name: string;
-    slug: string;
-    shortDescription: PortableTextBlock;
-    imageOne: { alt: string; url: string };
-    imageTwo: { alt: string; url: string };
-    links: Ilinks[];
-    linkName: string;
-    icon: string;
-    url: string;
-    description: PortableTextBlock;
-    techTags: ITechTag[];
-};
-
 export type HomePageInfo = {
     introduction: PortableTextBlock;
     introductionTitle: string;

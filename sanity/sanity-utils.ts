@@ -1,6 +1,5 @@
 import { createClient, groq } from "next-sanity";
 import {
-    HighlightedProject,
     HomePageExperience,
     HomePageInfo,
     HomePageProject,
@@ -16,28 +15,6 @@ export async function getProjects(): Promise<HomePageProject[]> {
 
     return client.fetch(
         groq`*[_type == "project"]{
-            _id,
-            name,
-            "slug": slug.current,
-            shortDescription,
-            "imageOne": imageOne.asset->{"alt": alt, "url": url},
-            "imageTwo": imageTwo.asset->{"alt": alt, "url": url},
-            links,
-            description,
-            techTags
-        }`
-    );
-}
-
-export async function getHighlightedProjects(): Promise<HighlightedProject[]> {
-    const client = createClient({
-        projectId: "dw5bak2b",
-        dataset: "production",
-        apiVersion: "2023-03-04",
-    });
-
-    return client.fetch(
-        groq`*[_type == "highlightedProject"]{
             _id,
             name,
             "slug": slug.current,
