@@ -9,6 +9,17 @@ const project = {
             type: "string",
         },
         {
+            name: "title",
+            title: "Title",
+            type: "string",
+        },
+        {
+            name: "shortDescription",
+            title: "Short Description",
+            type: "array",
+            of: [{ type: "block" }],
+        },
+        {
             name: "slug",
             title: "Slug",
             type: "slug",
@@ -17,8 +28,23 @@ const project = {
             },
         },
         {
-            name: "image",
-            title: "Image",
+            name: "imageOne",
+            title: "Image One",
+            type: "image",
+            options: {
+                hotspot: true,
+            },
+            fields: [
+                {
+                    name: "alt",
+                    title: "Alt",
+                    type: "string",
+                },
+            ],
+        },
+        {
+            name: "imageTwo",
+            title: "Image Two",
             type: "image",
             options: {
                 hotspot: true,
@@ -53,20 +79,40 @@ const project = {
                             name: "icon",
                             icon: "string",
                             title: "Icon",
-                            type: "string", // Keeping it as "string" for URL or reference
+                            type: "string",
                         },
                     ],
                 },
             ],
             options: {
-                layout: "tags", // Display skills in a grid layout
+                layout: "tags",
             },
         },
         {
-            name: "content",
-            title: "Content",
+            name: "description",
+            title: "Description",
             type: "array",
             of: [{ type: "block" }],
+        },
+        {
+            name: "techTags",
+            title: "Tech Tags",
+            type: "array",
+            of: [
+                {
+                    type: "object",
+                    fields: [
+                        {
+                            name: "tech",
+                            title: "Tech",
+                            type: "string",
+                        },
+                    ],
+                },
+            ],
+            options: {
+                layout: "tags",
+            },
         },
     ],
 };

@@ -16,21 +16,6 @@ export type ITestimonials = {
     picture: string;
 };
 
-export type IProject = {
-    _id: string;
-    _createdAt: Date;
-    name: string;
-    slug: string;
-    image: string;
-    links: {
-        _id: string;
-        linkName: string;
-        icon: string;
-        url: string;
-    };
-    content: PortableTextBlock;
-};
-
 export type ITechTag = {
     _id: string;
     _createdAt: Date;
@@ -43,4 +28,11 @@ export type IExperienceSkills = {
     _createdAt: Date;
     name: string;
     skillDescription: PortableTextBlock;
+};
+
+export type Ilinks = {
+    _id: string;
+    linkName: string;
+    icon: string;
+    url: string;
 };

@@ -7,7 +7,7 @@ type BadgesItemProps = {
 
 export const Badges = ({ label, className }: BadgesItemProps) => {
     return (
-        <div className="flex place-self-center text-center bg-badges px-2 py-1 md:px-5 md:py-3">
+        <div className="flex place-self-center text-center bg-badges px-2 py-1 md:px-3 md:py-1">
             <span
                 className={cn(
                     "text-white font-inter text-sm md:text-base font-bold",

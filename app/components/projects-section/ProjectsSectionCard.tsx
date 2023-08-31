@@ -1,63 +1,65 @@
+"use client";
 import Image from "next/image";
 
 import "./../../../public/images/photo-1481349518771-20055b2a7b24.jpg";
 import { ProjectsSectionCardItem } from "./ProjectsSectionCardItem";
 import { Badges } from "../Badges/Badges";
 import { ProjectsSectionLink } from "./ProjectsSectionLink";
+import { HomePageProject } from "../../types/page-info";
+import { PortableText } from "@portabletext/react";
 
-const PROJECT_SECTION_CARD_ITEMS = [
-    {
-        label: "Github",
-        icon: "FaGithub",
-        link: "",
-    },
-    {
-        label: "Preview",
-        icon: "FaLink",
-        link: "",
-    },
-];
-
-export const ProjectsSectionCard = () => {
+export const ProjectsSectionCard = ({
+    name,
+    slug,
+    shortDescription,
+    imageOne,
+    links,
+    techTags,
+}: HomePageProject) => {
     return (
         <div className="flex flex-col md:flex-row group">
-            <div className="w-full h-full mr-3">
-                <Image
-                    width={420}
-                    height={304}
-                    src="/images/photo-1481349518771-20055b2a7b24.jpg"
-                    alt="Project Thumbnail"
-                    unoptimized
-                    className="cover drop-shadow-xl transition-all duration-300 group-hover:scale-110"
-                />
+            <div className="w-full h-full mr-10">
+                <a href={slug}>
+                    <Image
+                        width={420}
+                        height={304}
+                        src={imageOne.url}
+                        alt="Project Thumbnail"
+                        loading="eager"
+                        className="cover drop-shadow-xl transition-all duration-300 md:group-hover:scale-90"
+                    />
+                </a>
             </div>
 
             <div className="flex flex-col gap-3 mt-6 md:mt-0">
-                <h3 className="font-inter text-primary text-sm">LOREM IPSUM</h3>
-                <p className="font-krona text-text text-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc vulputate libero et velit interdum, ac aliquet odio
-                    mattis.
+                <h3 className="font-inter text-primary text-sm uppercase">
+                    {name}
+                </h3>
+                <p className="font-krona text-text text-xl">
+                    <PortableText value={shortDescription} />
                 </p>
                 <div className="flex gap-4 md:gap-9">
-                    {PROJECT_SECTION_CARD_ITEMS.map((item) => (
+                    {links.map((links, index) => (
                         <ProjectsSectionCardItem
-                            icon={item.icon}
-                            key={item.label}
-                            label={item.label}
-                            link={item.link}
+                            key={index}
+                            icon={links.icon}
+                            label={links.linkName}
+                            link={links.url}
                         />
                     ))}
                 </div>
 
                 <div className="flex flex-wrap gap-4 md:gap-3">
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
+                    {techTags.map((techTag, index) => (
+                        <Badges
+                            key={index}
+                            label={techTag.tech}
+                            className="text-sm"
+                        />
+                    ))}
                 </div>
 
-                <ProjectsSectionLink href="/projects/book-wise" />
+                <ProjectsSectionLink href={slug} />
             </div>
         </div>
     );

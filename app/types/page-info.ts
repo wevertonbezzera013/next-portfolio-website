@@ -1,17 +1,16 @@
 import { PortableTextBlock } from "@sanity/types";
-import {
-    ISkills,
-    ITestimonials,
-    IProject,
-    ITechTag,
-    IExperienceSkills,
-} from "./projects";
+import { ISkills, Ilinks, ITechTag, IExperienceSkills } from "./projects";
 
 export type HomePageProject = {
-    _id: string;
-    _createdAt: Date;
+    _id: number;
     name: string;
-    projects: IProject[];
+    slug: string;
+    shortDescription: PortableTextBlock;
+    imageOne: { alt: string; url: string };
+    imageTwo: { alt: string; url: string };
+    links: Ilinks[];
+    description: PortableTextBlock;
+    techTags: ITechTag[];
 };
 
 export type HomePageInfo = {
@@ -25,7 +24,6 @@ export type HomePageInfo = {
     name: string;
     slug: string;
     skills: ISkills[];
-    projects: IProject[];
 };
 
 export type HomePageTestimonial = {

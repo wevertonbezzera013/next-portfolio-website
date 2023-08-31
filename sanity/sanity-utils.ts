@@ -16,13 +16,14 @@ export async function getProjects(): Promise<HomePageProject[]> {
     return client.fetch(
         groq`*[_type == "project"]{
             _id,
-            _createdAt,
             name,
             "slug": slug.current,
-            "image": image.asset->url,
-            github,
-            preview,
-            content
+            shortDescription,
+            "imageOne": imageOne.asset->{"alt": alt, "url": url},
+            "imageTwo": imageTwo.asset->{"alt": alt, "url": url},
+            links,
+            description,
+            techTags
         }`
     );
 }
