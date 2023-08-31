@@ -1,16 +1,13 @@
+import { HomePageProject } from "../../../types/page-info";
 import { Badges } from "../../Badges/Badges";
 import { SectionTitle } from "../../section-title/SectionTitle";
 import { ProjectIntroductionDescription } from "./ProjectIntroductionDescription";
 
-const PROJECT_INTRODUCTION_DESCRIPTION_PROP = [
-    {
-        title: "Test",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.",
-    },
-];
-
-export const ProjectIntroductionSection = () => {
+export const ProjectIntroductionSection = ({
+    projects, // This should be an array of HomePageProject objects
+}: {
+    projects: HomePageProject[];
+}) => {
     return (
         <section className="items-center text-white py-52 flex flex-col bg-gradient-to-t from-text to-primary">
             <div className="relative flex flex-col items-center text-center">
@@ -20,38 +17,34 @@ export const ProjectIntroductionSection = () => {
                 <div className="relative">
                     <div className="items-center text-center flex flex-col container gap-8">
                         {/* Text over the square */}
-                        {PROJECT_INTRODUCTION_DESCRIPTION_PROP.map((item) => (
+                        {projects.map((item) => (
                             <>
                                 <SectionTitle
-                                    title={item.title}
-                                    key={item.title}
+                                    title={item.name}
+                                    key={item._id}
                                 />
                                 <ProjectIntroductionDescription
-                                    description={item.description}
-                                    key={item.description}
+                                    description={item.shortDescription}
+                                    key={item._id}
                                 />
                             </>
                         ))}
 
                         <div className="container ">
-                            <div className="flex flex-wrap place-content-center gap-4 md:gap-3">
-                                <Badges
-                                    label="javascript"
-                                    className="text-sm"
-                                />
-                                <Badges
-                                    label="javascript"
-                                    className="text-sm"
-                                />
-                                <Badges
-                                    label="javascript"
-                                    className="text-sm"
-                                />
-                                <Badges
-                                    label="javascript"
-                                    className="text-sm"
-                                />
-                            </div>
+                            {projects.map((project, index) => (
+                                <div
+                                    key={index}
+                                    className="flex flex-wrap place-content-center gap-4 md:gap-3"
+                                >
+                                    {project.techTags.map((techTag) => (
+                                        <Badges
+                                            key={techTag._id}
+                                            label={techTag.tech} // Use the 'name' property as the label
+                                            className="text-sm"
+                                        />
+                                    ))}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

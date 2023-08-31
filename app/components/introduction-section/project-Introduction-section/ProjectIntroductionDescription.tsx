@@ -1,7 +1,9 @@
+import { PortableText } from "@portabletext/react";
 import { cn } from "../../../lib/utils";
+import { PortableTextBlock } from "sanity";
 
 type ProjectIntroductionDescriptionProps = {
-    description: string;
+    description: PortableTextBlock;
     className?: string;
 };
 
@@ -12,7 +14,7 @@ export const ProjectIntroductionDescription = ({
     return (
         <div className={cn("flex flex-col", className)}>
             <p className="font-inter text-introduction text-base">
-                {description}
+                <PortableText value={description} />
             </p>
         </div>
     );

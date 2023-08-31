@@ -19,7 +19,7 @@ export const ProjectsSectionCard = ({
     return (
         <div className="flex flex-col md:flex-row group">
             <div className="w-full h-full mr-10">
-                <a href={slug}>
+                <a href={`projects/${slug}`}>
                     <Image
                         width={420}
                         height={304}
@@ -59,7 +59,7 @@ export const ProjectsSectionCard = ({
                     ))}
                 </div>
 
-                <ProjectsSectionLink href={slug} />
+                <ProjectsSectionLink href={`/projects/${slug}`} />
             </div>
         </div>
     );

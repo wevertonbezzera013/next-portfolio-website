@@ -36,7 +36,18 @@ export const ProjectsSection = ({
                 {projects.slice(0, visible).map((project) => (
                     <p key={project._id}>
                         <ProjectsSectionCard
-                            {...project} // Spread the project properties
+                            name={project.name}
+                            slug={project.slug}
+                            shortDescription={project.shortDescription}
+                            imageOne={project.imageOne}
+                            imageTwo={project.imageTwo}
+                            links={project.links}
+                            description={project.description}
+                            techTags={project.techTags}
+                            _id={project._id}
+                            linkName={project.linkName}
+                            icon={project.icon}
+                            url={project.url}
                         />
                     </p>
                 ))}

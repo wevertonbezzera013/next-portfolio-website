@@ -9,6 +9,9 @@ export type HomePageProject = {
     imageOne: { alt: string; url: string };
     imageTwo: { alt: string; url: string };
     links: Ilinks[];
+    linkName: string;
+    icon: string;
+    url: string;
     description: PortableTextBlock;
     techTags: ITechTag[];
 };

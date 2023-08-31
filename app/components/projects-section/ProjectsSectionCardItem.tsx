@@ -18,7 +18,7 @@ export const ProjectsSectionCardItem = ({
 
     return (
         <div className="flex justify-start gap-9">
-            <Link href={link} target="_blank" rel="noopener noreferrer">
+            <Link href={`${link}`} target="_blank" rel="noopener noreferrer">
                 <div className="uppercase flex items-center text-white bg-button hover:bg-newBlue ease-in-out duration-300 py-2 px-8 md:py-2 md:px-12 font-bold">
                     <Icon name={icon} className="mr-2" /> {label}
                 </div>

@@ -3,7 +3,7 @@ export default function DownloadButton() {
         <>
             <a
                 className="sm:hidden md:block"
-                href="weverton's cv frontend developer.pdf"
+                href="/weverton's cv frontend developer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
             >
