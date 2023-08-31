@@ -38,7 +38,7 @@ export const ProjectPage = ({
                         <SectionTitle title="Project Description" />
                         {projects.map((item) => (
                             <p
-                                className="font-krona text-text text-sm md:text-lg pt-10"
+                                className="font-inter text-text text-sm md:text-lg pt-10"
                                 key={item._id}
                             >
                                 <PortableText value={item.description} />

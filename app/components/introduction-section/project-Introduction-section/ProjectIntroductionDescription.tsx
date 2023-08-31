@@ -13,7 +13,7 @@ export const ProjectIntroductionDescription = ({
 }: ProjectIntroductionDescriptionProps) => {
     return (
         <div className={cn("flex flex-col", className)}>
-            <p className="font-inter text-introduction text-base">
+            <p className="font-krona text-introduction text-base">
                 <PortableText value={description} />
             </p>
         </div>
