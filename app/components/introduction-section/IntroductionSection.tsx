@@ -4,7 +4,7 @@ import { IntroductionDescription } from "./IntroductionDescription";
 const INTRODUCTION_DESCRIPTION_PROP = [
     {
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.",
+            "Welcome to my Projects Page! Here, you'll get a glimpse into my journey through the realms of frontend, backend, and full-stack development, all brought to life using a colorful array of programming languages.",
     },
 ];
 

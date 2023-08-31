@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ProjectsSectionCardItem } from "../ProjectsSectionCardItem";
 import { Badges } from "../../Badges/Badges";
 import { ProjectsSectionLink } from "../ProjectsSectionLink";
+import { HighlightedProject } from "../../../types/page-info";
+import { PortableText } from "@portabletext/react";
 
 const PROJECT_SECTION_CARD_ITEMS = [
     {
@@ -17,7 +19,14 @@ const PROJECT_SECTION_CARD_ITEMS = [
     },
 ];
 
-export const HighlightedProjectsSectionCard = () => {
+export const HighlightedProjectsSectionCard = ({
+    name,
+    slug,
+    shortDescription,
+    imageOne,
+    links,
+    techTags, // This should be an array of HomePageProject objects
+}: HighlightedProject) => {
     return (
         <div className="flex flex-col md:flex-row container pt-20 pb-3 md:py-20 group">
             <div className="w-full h-full mr-8">
@@ -32,31 +41,32 @@ export const HighlightedProjectsSectionCard = () => {
             </div>
 
             <div className="flex flex-col gap-3 mt-6 md:mt-0">
-                <h3 className="font-inter text-primary text-sm">LOREM IPSUM</h3>
+                <h3 className="font-inter text-primary text-sm">{name}</h3>
                 <p className="font-krona text-text text-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc vulputate libero et velit interdum, ac aliquet odio
-                    mattis.
+                    <PortableText value={shortDescription} />
                 </p>
                 <div className="flex flex-wrap gap-4 md:gap-9">
-                    {PROJECT_SECTION_CARD_ITEMS.map((item) => (
+                    {links.map((links, index) => (
                         <ProjectsSectionCardItem
-                            icon={item.icon}
-                            key={item.label}
-                            label={item.label}
-                            link={item.link}
+                            key={index}
+                            icon={links.icon}
+                            label={links.linkName}
+                            link={links.url}
                         />
                     ))}
                 </div>
 
                 <div className="flex flex-wrap gap-4 md:gap-3">
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
-                    <Badges label="javascript" className="text-sm" />
+                    {techTags.map((techTag, index) => (
+                        <Badges
+                            key={index}
+                            label={techTag.tech}
+                            className="text-sm"
+                        />
+                    ))}
                 </div>
 
-                <ProjectsSectionLink href="/projects/book-wise" />
+                <ProjectsSectionLink href={`/projects/${slug}`} />
             </div>
         </div>
     );
