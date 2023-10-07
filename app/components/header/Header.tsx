@@ -28,7 +28,7 @@ export default function Header() {
     };
 
     return (
-        <header className="font-krona sticky bg-white top-0 w-full z-10 h-24 flex items-center justify-center">
+        <header className="font-krona sticky bg-white top-0 w-full h-24 flex items-center justify-center z-[1000]">
             <div className="w-[90%] pl-1 pr-1 md:pl-5 md:pr-5 flex items-center justify-between">
                 <Link href="/">
                     <div className="text-text text-base md:text-2xl">

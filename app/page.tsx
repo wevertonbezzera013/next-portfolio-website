@@ -19,15 +19,11 @@ export default async function Home() {
             {pageInfo.map((content) => (
                 <div key={content._id}>
                     <Skills tech={content.skills} />
-                    {projects.map((projectContent) => (
-                        <div key={projectContent._id}>
-                            <ProjectsSection projects={projects} />
-                        </div>
-                    ))}
-                    <TestimonialsSection />
-                    <WorkExperienceSection />
                 </div>
             ))}
+            <ProjectsSection projects={projects} />
+            <TestimonialsSection />
+            <WorkExperienceSection />
         </>
     );
 }

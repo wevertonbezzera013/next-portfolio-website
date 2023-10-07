@@ -10,12 +10,8 @@ export default async function Projects() {
     const projects = await getProjects();
     return (
         <main>
-            {projects.map((projectContent) => (
-                <div key={projectContent._id}>
-                    <IntroductionSection />
-                    <ProjectsSectionGrid projects={projects} />
-                </div>
-            ))}
+            <IntroductionSection />
+            <ProjectsSectionGrid projects={projects} />
         </main>
     );
 }

@@ -14,12 +14,8 @@ export default async function Project() {
     const projects = await getProjects();
     return (
         <main>
-            {projects.map((projectContent) => (
-                <div key={projectContent._id}>
-                    <ProjectIntroductionSection projects={projects} />
-                    <ProjectPage projects={projects} />
-                </div>
-            ))}
+            <ProjectIntroductionSection projects={projects} />
+            <ProjectPage projects={projects} />
         </main>
     );
 }
