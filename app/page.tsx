@@ -1,4 +1,4 @@
-import { getExperience, getPage, getProjects } from "../sanity/sanity-utils";
+import { getPage, getProjects } from "../sanity/sanity-utils";
 import { HeroSection } from "./components/hero-section/HeroSection";
 import { ProjectsSection } from "./components/projects-section/ProjectsSection";
 import { Skills } from "./components/skills/Skills";
@@ -16,6 +16,7 @@ export default async function Home() {
     return (
         <>
             <HeroSection />
+
             {pageInfo.map((content) => (
                 <div key={content._id}>
                     <Skills tech={content.skills} />
