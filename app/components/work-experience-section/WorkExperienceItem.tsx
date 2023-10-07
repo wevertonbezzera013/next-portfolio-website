@@ -18,8 +18,8 @@ export const WorkExperienceItem = ({
 }: HomePageExperience) => {
     const formattedStartDate = new Date(startDate).toLocaleDateString();
     let formattedEndDate = new Date(endDate).toLocaleDateString();
-    const checkIsEmpty = (date: string) => {
-        if (date == "31/12/1969") {
+    const checkIsEmpty = (date: string, secondDate: string) => {
+        if (date == secondDate) {
             return "Present";
         } else {
             return date; // Add this line to return the non-empty date
@@ -61,7 +61,8 @@ export const WorkExperienceItem = ({
                         {role}
                     </h4>
                     <span className="font-inter text-sm text-white font-bold">
-                        {formattedStartDate} - {checkIsEmpty(formattedEndDate)}
+                        {formattedStartDate} -{" "}
+                        {checkIsEmpty(formattedEndDate, formattedStartDate)}
                     </span>
                     <p className="text-white font-krona text-sm">
                         <PortableText value={description} />
