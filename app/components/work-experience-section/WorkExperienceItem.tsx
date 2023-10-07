@@ -17,7 +17,17 @@ export const WorkExperienceItem = ({
     year,
 }: HomePageExperience) => {
     const formattedStartDate = new Date(startDate).toLocaleDateString();
-    const formattedEndDate = new Date(endDate).toLocaleDateString();
+    let formattedEndDate = new Date(endDate).toLocaleDateString();
+    const checkIsEmpty = (date: string) => {
+        if (date == "31/12/1969") {
+            return "Present";
+        } else {
+            return date; // Add this line to return the non-empty date
+        }
+    };
+
+    console.log(endDate);
+
     return (
         <div className="container grid grid-cols-[40px,1fr] gap-4 md:gap-10">
             <div className="flex flex-col items-center gap-4 mr-1">
@@ -53,7 +63,7 @@ export const WorkExperienceItem = ({
                         {role}
                     </h4>
                     <span className="font-inter text-sm text-white font-bold">
-                        {formattedStartDate} - {formattedEndDate}
+                        {formattedStartDate} - {checkIsEmpty(formattedEndDate)}
                     </span>
                     <p className="text-white font-krona text-sm">
                         <PortableText value={description} />
