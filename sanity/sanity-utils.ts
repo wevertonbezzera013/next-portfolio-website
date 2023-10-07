@@ -28,6 +28,29 @@ export async function getProjects(): Promise<HomePageProject[]> {
     );
 }
 
+export async function getProjectPage(slug: string): Promise<HomePageProject> {
+    const client = createClient({
+        projectId: "dw5bak2b",
+        dataset: "production",
+        apiVersion: "2023-03-04",
+    });
+
+    return client.fetch(
+        groq`*[_type == "project" && slug.current == $slug][0]{
+            _id,
+            name,
+            "slug": slug.current,
+            shortDescription,
+            "imageOne": imageOne.asset->{"alt": alt, "url": url},
+            "imageTwo": imageTwo.asset->{"alt": alt, "url": url},
+            links,
+            description,
+            techTags
+        }`,
+        { slug: slug }
+    );
+}
+
 export async function getPage(): Promise<HomePageInfo[]> {
     const client = createClient({
         projectId: "dw5bak2b",
