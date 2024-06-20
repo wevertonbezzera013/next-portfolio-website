@@ -23,7 +23,7 @@ export default async function Home() {
                 </div>
             ))}
             <ProjectsSection projects={projects} />
-            <TestimonialsSection />
+            {/* <TestimonialsSection /> */}
             <WorkExperienceSection />
         </>
     );
